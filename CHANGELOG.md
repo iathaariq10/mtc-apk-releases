@@ -19,11 +19,9 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 - Live Worker package flow proved authenticated member identity, separate cloud
   reviewer, authoritative Settings, Approved sync listing, Imported transition, and
   complete cleanup of temporary D1 rows.
-
-### Pending Verification
-
-- Compare the public GitHub artifact hash with the local checksum, activate the D1 OTA
-  manifest, and verify the live manifest before declaring OTA `0.9.1` active.
+- Local artifact, public GitHub URL, and active D1 manifest hashes match. The live
+  manifest serves `0.9.1`, minimum `0.8.0`, form
+  `checksheet-package-2026.08.1`, and `force_update=false`.
 
 ## 0.9.0 - 2026-07-19
 
