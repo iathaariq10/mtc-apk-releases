@@ -4,14 +4,14 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.8.7`
-- Version code: `30`
-- APK: [`releases/v0.8.7/app-release.apk`](releases/v0.8.7/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.8.7/app-release.apk`
-- SHA-256: `7b0c1bb2a5a9232a72baa961377eff719a63ce68f7982ce7f83bb1049061cf58`
+- Version: `0.9.0`
+- Version code: `31`
+- APK: [`releases/v0.9.0/app-release.apk`](releases/v0.9.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.9.0/app-release.apk`
+- SHA-256: `c0ea81206e15e911fe5718339e5184ee4d78a9db482838ae30a140c8d84dd906`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.8.7` includes centrally controlled checksheet fields by machine operating state, blank member-input fields, atomic batch review, pairing requests, FCM registration, and consolidated multi-machine checked-PDF export.
+Release `0.9.0` submits one review record per machine containing all five forms, uses the shared checksheet contract `2026.08.1`, normalizes machine aliases such as `POLYMOTOPLY950`, and exports heater/cooling-time data to the correct machine rows in single- or multi-machine checked PDFs.
 
 ## Publishing Rules
 
