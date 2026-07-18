@@ -2,6 +2,25 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.9.2 - 2026-07-19
+
+### Fixed
+
+- Centrally disabled mold/mode fields now accept the explicit `-` sentinel during
+  APK validation instead of blocking submission.
+- Resubmit is restricted to the original submission owner so the checksheet operator
+  cannot be replaced by a reviewing admin.
+- EXE import rejects conflicting `machine_id`/`machine_code`, stale package versions,
+  and unknown package-level fields.
+
+### Verified
+
+- APK SHA-256: `85e2f39d81e26732cf1f93c07fa222e48b3f21ed3761185a2096ec9d1acbfced`.
+- APK Signature Scheme v2, one signer; Android unit and release builds passed.
+- Worker regression test passed `21/21`; package round-trip to SQLite passed.
+- Physical-device verification for `0.9.2` is pending because no ADB device was
+  connected during this patch build; `0.9.1` remains the latest device-tested base.
+
 ## 0.9.1 - 2026-07-19
 
 ### Added

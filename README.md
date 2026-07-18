@@ -4,18 +4,17 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.9.1`
-- Version code: `32`
-- APK: [`releases/v0.9.1/app-release.apk`](releases/v0.9.1/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.9.1/app-release.apk`
-- SHA-256: `dd523032ffd4eff4fcd9752af94a69934670888bc9ef4457c57db68cee7ceaa9`
+- Version: `0.9.2`
+- Version code: `33`
+- APK: [`releases/v0.9.2/app-release.apk`](releases/v0.9.2/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.9.2/app-release.apk`
+- SHA-256: `85e2f39d81e26732cf1f93c07fa222e48b3f21ed3761185a2096ec9d1acbfced`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.9.1` keeps one five-form package per machine and hardens its data boundary:
-the Worker derives operator identity from the authenticated member, validates the live
-Settings/form/date/options/ranges, keeps the admin approver separate, and permits EXE
-import only from a valid Approved envelope. The APK also blocks future dates and uses
-the active bootstrap Settings version.
+Release `0.9.2` keeps one five-form package per machine and closes the final correction
+and Settings edge cases: centrally disabled option fields accept the explicit `-`
+sentinel, only the original submission owner can resubmit, and EXE import rejects
+conflicting machine identity or stale package metadata.
 
 ## Publishing Rules
 
