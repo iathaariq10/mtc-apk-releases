@@ -4,14 +4,18 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.9.0`
-- Version code: `31`
-- APK: [`releases/v0.9.0/app-release.apk`](releases/v0.9.0/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.9.0/app-release.apk`
-- SHA-256: `c0ea81206e15e911fe5718339e5184ee4d78a9db482838ae30a140c8d84dd906`
+- Version: `0.9.1`
+- Version code: `32`
+- APK: [`releases/v0.9.1/app-release.apk`](releases/v0.9.1/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.9.1/app-release.apk`
+- SHA-256: `dd523032ffd4eff4fcd9752af94a69934670888bc9ef4457c57db68cee7ceaa9`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.9.0` submits one review record per machine containing all five forms, uses the shared checksheet contract `2026.08.1`, normalizes machine aliases such as `POLYMOTOPLY950`, and exports heater/cooling-time data to the correct machine rows in single- or multi-machine checked PDFs.
+Release `0.9.1` keeps one five-form package per machine and hardens its data boundary:
+the Worker derives operator identity from the authenticated member, validates the live
+Settings/form/date/options/ranges, keeps the admin approver separate, and permits EXE
+import only from a valid Approved envelope. The APK also blocks future dates and uses
+the active bootstrap Settings version.
 
 ## Publishing Rules
 

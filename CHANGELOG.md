@@ -2,6 +2,29 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.9.1 - 2026-07-19
+
+### Added
+
+- Published signed APK version `0.9.1` (`versionCode 32`).
+- Added server-authoritative operator identity, live Settings/form/date/value
+  validation, review/import state guards, and APK-to-SQLite round-trip coverage.
+
+### Verified
+
+- APK SHA-256: `dd523032ffd4eff4fcd9752af94a69934670888bc9ef4457c57db68cee7ceaa9`.
+- APK Signature Scheme v2, Android unit/release build, package instrumentation `2/2`,
+  five-form UI instrumentation `1/1`, installation, and cold launch passed on Samsung
+  `SM-F956B`.
+- Live Worker package flow proved authenticated member identity, separate cloud
+  reviewer, authoritative Settings, Approved sync listing, Imported transition, and
+  complete cleanup of temporary D1 rows.
+
+### Pending Verification
+
+- Compare the public GitHub artifact hash with the local checksum, activate the D1 OTA
+  manifest, and verify the live manifest before declaring OTA `0.9.1` active.
+
 ## 0.9.0 - 2026-07-19
 
 ### Added
