@@ -14,10 +14,11 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 
 - APK SHA-256: `c0ea81206e15e911fe5718339e5184ee4d78a9db482838ae30a140c8d84dd906`.
 - Android unit/build checks and physical Samsung `SM-F956B` package/PDF instrumentation passed.
-
-### Pending Verification
-
-- Activate the live OTA manifest only after the public GitHub artifact hash matches this release.
+- The public GitHub artifact, local release, and active D1 manifest hashes match.
+- The live manifest serves `0.9.0` with `force_update=false` and form version
+  `checksheet-package-2026.08.1`.
+- Authenticated package create/read/delete and Worker-to-device FCM delivery passed;
+  the temporary test identity and data were removed afterward.
 
 ## 0.8.7 - 2026-07-19
 
