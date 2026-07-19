@@ -17,6 +17,9 @@ APK and EXE, and delivers important background notifications through high-priori
 FCM data messages. Pairing, batch review, checked-PDF mapping, and PC import were
 verified together in a controlled live trial.
 
+The live D1 manifest serves `0.10.0` with minimum version `0.8.0`, form contract
+`checksheet-package-2026.08.1`, a matching artifact hash, and `force_update=false`.
+
 ## Publishing Rules
 
 1. Never replace an APK under an existing version path. Publish a new version directory instead.

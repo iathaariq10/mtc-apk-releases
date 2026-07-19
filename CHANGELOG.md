@@ -30,6 +30,9 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 - A controlled live trial passed pairing, three machine-operation conditions,
   three five-form packages, batch approval, EXE import, monthly Excel/PDF reports,
   Imported status, and cleanup of temporary D1 rows.
+- The public GitHub artifact and active D1 manifest hashes match the local APK.
+- The live manifest serves `0.10.0` with `force_update=false`; signed release install
+  and cold launch passed on Samsung `SM-F956B` without a fatal exception.
 
 ## 0.9.2 - 2026-07-19
 
