@@ -2,6 +2,20 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.10.1 - 2026-07-19
+
+### Changed
+
+- Migrated Android FCM registration from deprecated `getToken()` to
+  `FirebaseMessaging.register()` and `onRegistered`, while retaining the legacy token
+  refresh callback for SDK compatibility.
+
+### Verified
+
+- APK SHA-256: `cb0eec8f06af5a2c367e9a1515eaae85c4d914f1485379ef379d5d201f82b8c7`.
+- Version code `35`, signature v2, cold launch, package/input/PDF instrumentation, and
+  FCM background delivery passed on Samsung `SM-F956B`.
+
 ## 0.10.0 - 2026-07-19
 
 ### Added

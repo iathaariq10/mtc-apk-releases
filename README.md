@@ -4,20 +4,20 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.10.0`
-- Version code: `34`
-- APK: [`releases/v0.10.0/app-release.apk`](releases/v0.10.0/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.10.0/app-release.apk`
-- SHA-256: `7ac7bec118a7d1e3ba85af4918bc9d186b4a87ef8ed76697178351befc304ea0`
+- Version: `0.10.1`
+- Version code: `35`
+- APK: [`releases/v0.10.1/app-release.apk`](releases/v0.10.1/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.10.1/app-release.apk`
+- SHA-256: `cb0eec8f06af5a2c367e9a1515eaae85c4d914f1485379ef379d5d201f82b8c7`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.10.0` polishes the member and admin workflows, keeps each machine as one
-five-form submission package, applies operation-status field access consistently on
-APK and EXE, and delivers important background notifications through high-priority
-FCM data messages. Pairing, batch review, checked-PDF mapping, and PC import were
-verified together in a controlled live trial.
+Release `0.10.1` keeps the `0.10.0` member/admin workflow and fixes Firebase token
+registration by using the current `register()`/`onRegistered` API while retaining
+legacy refresh compatibility. Important background notifications remain high-priority
+FCM data messages. The binary was installed and background-tested on Samsung
+`SM-F956B`.
 
-The live D1 manifest serves `0.10.0` with minimum version `0.8.0`, form contract
+The live D1 manifest serves `0.10.1` with minimum version `0.8.0`, form contract
 `checksheet-package-2026.08.1`, a matching artifact hash, and `force_update=false`.
 
 ## Publishing Rules
