@@ -2,6 +2,35 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.10.0 - 2026-07-19
+
+### Added
+
+- Published signed APK version `0.10.0` (`versionCode 34`).
+- Added polished member/admin navigation, one five-form package per machine, and
+  centrally configurable field access for Production, Idle, and Off conditions.
+- Important FCM events now use high-priority data messages so the APK service can
+  display notifications while the app is in the background.
+
+### Fixed
+
+- Machine aliases, heater values, cooling time, and multi-machine checked-PDF data
+  remain bound to the correct canonical machine.
+- Disabled heater-current positions also disable the matching fuse field.
+- Compact-screen admin navigation now scrolls to the Administration section before
+  screenshot validation, and deprecated Compose dropdown anchors were migrated.
+
+### Verified
+
+- APK SHA-256: `7ac7bec118a7d1e3ba85af4918bc9d186b4a87ef8ed76697178351befc304ea0`.
+- APK Signature Scheme v2 with the production signer; Android unit, lint vital,
+  debug, instrumentation, and release builds passed.
+- Samsung `SM-F956B` physical tests passed for package submission, all five forms,
+  six-machine PDF mapping, combined-machine PDF output, responsive UI, and FCM.
+- A controlled live trial passed pairing, three machine-operation conditions,
+  three five-form packages, batch approval, EXE import, monthly Excel/PDF reports,
+  Imported status, and cleanup of temporary D1 rows.
+
 ## 0.9.2 - 2026-07-19
 
 ### Fixed

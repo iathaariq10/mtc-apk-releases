@@ -4,17 +4,18 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.9.2`
-- Version code: `33`
-- APK: [`releases/v0.9.2/app-release.apk`](releases/v0.9.2/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.9.2/app-release.apk`
-- SHA-256: `85e2f39d81e26732cf1f93c07fa222e48b3f21ed3761185a2096ec9d1acbfced`
+- Version: `0.10.0`
+- Version code: `34`
+- APK: [`releases/v0.10.0/app-release.apk`](releases/v0.10.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.10.0/app-release.apk`
+- SHA-256: `7ac7bec118a7d1e3ba85af4918bc9d186b4a87ef8ed76697178351befc304ea0`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.9.2` keeps one five-form package per machine and closes the final correction
-and Settings edge cases: centrally disabled option fields accept the explicit `-`
-sentinel, only the original submission owner can resubmit, and EXE import rejects
-conflicting machine identity or stale package metadata.
+Release `0.10.0` polishes the member and admin workflows, keeps each machine as one
+five-form submission package, applies operation-status field access consistently on
+APK and EXE, and delivers important background notifications through high-priority
+FCM data messages. Pairing, batch review, checked-PDF mapping, and PC import were
+verified together in a controlled live trial.
 
 ## Publishing Rules
 
