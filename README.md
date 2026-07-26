@@ -4,20 +4,19 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.10.2`
-- Version code: `36`
-- APK: [`releases/v0.10.2/app-release.apk`](releases/v0.10.2/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.10.2/app-release.apk`
-- SHA-256: `227bdb2abe1d0d94e0d638be2f277d52b535e1d0b6f2ea3227d2386a0a744c7f`
+- Version: `0.10.3`
+- Version code: `37`
+- APK: [`releases/v0.10.3/app-release.apk`](releases/v0.10.3/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.10.3/app-release.apk`
+- SHA-256: `2908dbf91e5f59e0e14d25f97308d4c72d9dab439759613aa86d6e8b493bfe66`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.10.2` lets members revise their own Pending Review submissions with stale
-review protection, adds persistent notification inbox/history and notification
-deep-link routing, and adds Hopper Dryer On/Off behavior. Mold and mode fields support
-the explicit `-` sentinel while disabled fields remain contract-safe across APK,
-Worker, and EXE.
+Release `0.10.3` fixes the `Lainnya` navigation hierarchy. Child screens now provide
+an explicit return action, Android Back returns to the originating primary tab, unknown
+or unauthorized routes fall back safely to Beranda, and menu entries explain their
+purpose more clearly for members and administrators.
 
-The live D1 manifest serves `0.10.2` with minimum version `0.8.0`, form contract
+The live D1 manifest serves `0.10.3` with minimum version `0.8.0`, form contract
 `checksheet-package-2026.08.1`, a matching artifact hash, and `force_update=false`.
 
 ## Publishing Rules

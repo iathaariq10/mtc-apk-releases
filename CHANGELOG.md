@@ -2,6 +2,24 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.10.3 - 2026-07-26
+
+### Fixed
+
+- Added role-aware route validation for the `Lainnya` menu.
+- Added a visible return action on child screens and preserved the primary tab that
+  opened `Lainnya`, so Back no longer jumps unexpectedly to Beranda.
+- Unknown routes now return to Beranda instead of silently opening the checksheet form.
+- Added concise descriptions to operational, administration, account, and device menu
+  entries.
+
+### Verified
+
+- APK SHA-256: `2908dbf91e5f59e0e14d25f97308d4c72d9dab439759613aa86d6e8b493bfe66`.
+- Version code `37`, APK Signature Scheme v2, release build, lint vital, unit tests,
+  install, cold launch, and fatal-log check passed.
+- Focused navigation instrumentation passed on Android Studio emulator `MTC_API35`.
+
 ## 0.10.2 - 2026-07-26
 
 ### Added
