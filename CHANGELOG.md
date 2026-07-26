@@ -2,6 +2,32 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.10.4 - 2026-07-26
+
+### Changed
+
+- Reworked every `Lainnya` workflow with role-aware navigation, explicit return
+  behavior, independent loading states, safe confirmations, useful empty/error
+  states, and current-account protection.
+- Pairing requests are scoped to the current device; active devices cannot be
+  silently reassigned to another member.
+- Notifications now expose active/history views and route member review events to
+  Riwayat instead of an unauthorized admin screen.
+- Mold dropdowns always include `-` when no mold is installed.
+- Hopper Dryer status is an explicit Production decision. MTC measurement fields are
+  active and required only for `On`; `Off` stores the measurements as `-`, while
+  machine-specific central Settings remain authoritative.
+
+### Verified
+
+- APK SHA-256: `2e1c8d8d75276644f9d77bbbe03729baed70258c5c2df149f8578e5ec9b28fa4`.
+- Version code `38`, APK Signature Scheme v2, 39 Android unit tests, release lint,
+  release build, install, cold launch, and fatal-log check passed.
+- One focused `Lainnya` navigation instrumentation test passed on Android Studio
+  emulator API 35; no physical device was used.
+- Worker tests passed `39/39`; D1 form `2026.08.2` and all 21 Hopper access matrices
+  were verified with no foreign-key violations.
+
 ## 0.10.3 - 2026-07-26
 
 ### Fixed

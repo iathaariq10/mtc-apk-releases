@@ -4,20 +4,21 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.10.3`
-- Version code: `37`
-- APK: [`releases/v0.10.3/app-release.apk`](releases/v0.10.3/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.10.3/app-release.apk`
-- SHA-256: `2908dbf91e5f59e0e14d25f97308d4c72d9dab439759613aa86d6e8b493bfe66`
+- Version: `0.10.4`
+- Version code: `38`
+- APK: [`releases/v0.10.4/app-release.apk`](releases/v0.10.4/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.10.4/app-release.apk`
+- SHA-256: `2e1c8d8d75276644f9d77bbbe03729baed70258c5c2df149f8578e5ec9b28fa4`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.10.3` fixes the `Lainnya` navigation hierarchy. Child screens now provide
-an explicit return action, Android Back returns to the originating primary tab, unknown
-or unauthorized routes fall back safely to Beranda, and menu entries explain their
-purpose more clearly for members and administrators.
+Release `0.10.4` completes the `Lainnya` workflow cleanup: role-aware navigation,
+safe confirmations and loading states, device-scoped pairing status, notification
+history, stricter account administration, and explicit empty/error states. Mold input
+now always provides `-` for machines without an installed mold.
 
-The live D1 manifest serves `0.10.3` with minimum version `0.8.0`, form contract
-`checksheet-package-2026.08.1`, a matching artifact hash, and `force_update=false`.
+Hopper Dryer now follows Production's On/Off decision. MTC measurement fields are
+required only while it is On, remain governed by per-machine Settings, and are sent as
+`-` while Off. The live contract is `checksheet-package-2026.08.2`.
 
 ## Publishing Rules
 
