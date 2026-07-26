@@ -2,6 +2,31 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.10.2 - 2026-07-26
+
+### Added
+
+- Added member revision while a checksheet is still Pending Review, guarded by a
+  submission revision number so an admin cannot review stale data.
+- Added persistent notification inbox/history, read state, and navigation from a
+  tapped background notification to the relevant APK tab.
+- Added Hopper Dryer On/Off input. Off forces the remaining Hopper fields to `-`.
+
+### Fixed
+
+- Mold and limit-switch mode inputs now accept `-` consistently with central Settings.
+- Push token registration is retried after login/session restore, while important FCM
+  events remain high-priority data messages.
+
+### Verified
+
+- APK SHA-256: `227bdb2abe1d0d94e0d638be2f277d52b535e1d0b6f2ea3227d2386a0a744c7f`.
+- Version code `36`, APK Signature Scheme v2, release build, lint vital, unit tests,
+  install, cold launch, and fatal-log check passed on Android Studio emulator
+  `MTC_API35`.
+- Worker `36/36`, Python `94/94`, contract/documentation guards, and
+  APK-to-Worker-to-EXE package round-trip passed.
+
 ## 0.10.1 - 2026-07-19
 
 ### Changed

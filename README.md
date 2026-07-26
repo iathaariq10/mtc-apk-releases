@@ -4,20 +4,20 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.10.1`
-- Version code: `35`
-- APK: [`releases/v0.10.1/app-release.apk`](releases/v0.10.1/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.10.1/app-release.apk`
-- SHA-256: `cb0eec8f06af5a2c367e9a1515eaae85c4d914f1485379ef379d5d201f82b8c7`
+- Version: `0.10.2`
+- Version code: `36`
+- APK: [`releases/v0.10.2/app-release.apk`](releases/v0.10.2/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.10.2/app-release.apk`
+- SHA-256: `227bdb2abe1d0d94e0d638be2f277d52b535e1d0b6f2ea3227d2386a0a744c7f`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.10.1` keeps the `0.10.0` member/admin workflow and fixes Firebase token
-registration by using the current `register()`/`onRegistered` API while retaining
-legacy refresh compatibility. Important background notifications remain high-priority
-FCM data messages. The binary was installed and background-tested on Samsung
-`SM-F956B`.
+Release `0.10.2` lets members revise their own Pending Review submissions with stale
+review protection, adds persistent notification inbox/history and notification
+deep-link routing, and adds Hopper Dryer On/Off behavior. Mold and mode fields support
+the explicit `-` sentinel while disabled fields remain contract-safe across APK,
+Worker, and EXE.
 
-The live D1 manifest serves `0.10.1` with minimum version `0.8.0`, form contract
+The live D1 manifest serves `0.10.2` with minimum version `0.8.0`, form contract
 `checksheet-package-2026.08.1`, a matching artifact hash, and `force_update=false`.
 
 ## Publishing Rules
