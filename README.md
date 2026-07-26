@@ -4,21 +4,22 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.10.4`
-- Version code: `38`
-- APK: [`releases/v0.10.4/app-release.apk`](releases/v0.10.4/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.10.4/app-release.apk`
-- SHA-256: `2e1c8d8d75276644f9d77bbbe03729baed70258c5c2df149f8578e5ec9b28fa4`
+- Version: `0.10.5`
+- Version code: `39`
+- APK: [`releases/v0.10.5/app-release.apk`](releases/v0.10.5/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.10.5/app-release.apk`
+- SHA-256: `4d56b01ce855ceb37c7df72b293ccd9c925bfaf557232698866bcd70e2948965`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.10.4` completes the `Lainnya` workflow cleanup: role-aware navigation,
-safe confirmations and loading states, device-scoped pairing status, notification
-history, stricter account administration, and explicit empty/error states. Mold input
-now always provides `-` for machines without an installed mold.
+Release `0.10.5` moves notifications to a bell in the top-right application header
+with an active-event badge and removes notification history from `Lainnya`. Worker
+events are persisted per user and sent as Android-priority `HIGH`, data-only FCM so
+the APK service can display them in the notification bar while the app is in the
+background. Opening an event consumes and deletes it.
 
-Hopper Dryer now follows Production's On/Off decision. MTC measurement fields are
-required only while it is On, remain governed by per-machine Settings, and are sent as
-`-` while Off. The live contract is `checksheet-package-2026.08.2`.
+The release also adds server-side daily schedule reminders and push coverage for
+review/import, pairing, account/settings, OTA, security, and operational state
+changes. The live checksheet contract remains `checksheet-package-2026.08.2`.
 
 ## Publishing Rules
 

@@ -2,6 +2,31 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.10.5 - 2026-07-26
+
+### Changed
+
+- Moved notification access to a badged bell in the top-right APK header and removed
+  notification history and the duplicate `Lainnya` entry.
+- Consumed notification events are deleted immediately instead of retained as read
+  history.
+- Expanded Worker push coverage to review/import, pairing, user/account, Settings,
+  OTA, repeated-login, schedule, and operational-state events.
+- Daily checksheet schedule reminders now originate from the Worker cron, so delivery
+  does not depend on opening the APK.
+
+### Verified
+
+- APK SHA-256: `4d56b01ce855ceb37c7df72b293ccd9c925bfaf557232698866bcd70e2948965`.
+- Version code `39`, APK Signature Scheme v2, release lint/build/install/cold launch,
+  41 Android unit tests, and 3 focused emulator instrumentation tests passed.
+- A controlled Android Studio emulator trial proved data-only FCM delivery to the
+  notification bar while the APK was in the background.
+- The same live trial passed two one-package submissions (`MA780` and `PLY950`), five
+  forms per package, Pending Review revision, one batch decision, two-row isolated PC
+  import, one combined checked PDF, and `Critical` to `Healthy` operational alerts.
+- Worker regression passed `43/43`; D1 cleanup and foreign-key verification passed.
+
 ## 0.10.4 - 2026-07-26
 
 ### Changed
