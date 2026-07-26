@@ -2,6 +2,24 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.10.6 - 2026-07-26
+
+### Fixed
+
+- Deduplicated concurrent Firebase registration callbacks so the same user/token pair
+  cannot create parallel Worker upserts.
+- Forwarded the generic Worker `entity_id` from background FCM data into the APK
+  notification intent.
+
+### Verified
+
+- APK SHA-256: `9df18327f3f3e151fa58ed805520ad22e994a6ef66b1c2651980edcff8b02dd7`.
+- Version code `40`, APK Signature Scheme v2, release lint/build/install/cold launch,
+  42 Android unit tests, and focused FCM instrumentation passed.
+- Controlled acceptance passed background notification-bar delivery plus the complete
+  two-machine/five-form revision, batch-review, isolated-import, combined-PDF, and
+  operational-alert recovery flow.
+
 ## 0.10.5 - 2026-07-26
 
 ### Changed
