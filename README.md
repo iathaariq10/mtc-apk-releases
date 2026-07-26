@@ -4,24 +4,17 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.10.6`
-- Version code: `40`
-- APK: [`releases/v0.10.6/app-release.apk`](releases/v0.10.6/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.10.6/app-release.apk`
-- SHA-256: `9df18327f3f3e151fa58ed805520ad22e994a6ef66b1c2651980edcff8b02dd7`
+- Version: `0.10.7`
+- Version code: `41`
+- APK: [`releases/v0.10.7/app-release.apk`](releases/v0.10.7/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.10.7/app-release.apk`
+- SHA-256: `c1ebf18d2eae8e885cebe2703b058463069561512e470d26a23e4992021814a5`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.10.6` moves notifications to a bell in the top-right application header
-with an active-event badge and removes notification history from `Lainnya`. Worker
-events are persisted per user and sent as Android-priority `HIGH`, data-only FCM so
-the APK service can display them in the notification bar while the app is in the
-background. Opening an event consumes and deletes it. This patch also prevents
-parallel Firebase callbacks from registering the same token twice and forwards the
-generic Worker `entity_id` consistently.
-
-The release also adds server-side daily schedule reminders and push coverage for
-review/import, pairing, account/settings, OTA, security, and operational state
-changes. The live checksheet contract remains `checksheet-package-2026.08.2`.
+Release `0.10.7` removes the duplicate Mold input from Limit Switch. Mold is now
+owned only by Checksheet Mesin, while the five-form package remains compatible with
+legacy `checksheet-package-2026.08.2` submissions during the rollout transition.
+The active contract is `checksheet-package-2026.08.3`.
 
 ## Publishing Rules
 

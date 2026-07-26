@@ -2,6 +2,23 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.10.7 - 2026-07-26
+
+### Fixed
+
+- Removed the duplicate Mold input from Checksheet Limit Switch. Mold is now entered
+  once in Checksheet Mesin and remains available as package-level machine context.
+- Aligned the APK with `checksheet-package-2026.08.3`; the Worker accepts and
+  normalizes conflict-free `2026.08.2` packages during the migration window.
+
+### Verified
+
+- APK SHA-256: `c1ebf18d2eae8e885cebe2703b058463069561512e470d26a23e4992021814a5`.
+- Version code `41`, APK Signature Scheme v2, release lint/build, 42 Android unit
+  tests, focused package-contract instrumentation, and five-form roundtrip passed.
+- Live D1 form `2026.08.3` contains five forms, one Machine-owned `mold_name`, and
+  no Limit Switch `mold_name`.
+
 ## 0.10.6 - 2026-07-26
 
 ### Fixed
