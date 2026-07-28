@@ -4,17 +4,18 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.10.7`
-- Version code: `41`
-- APK: [`releases/v0.10.7/app-release.apk`](releases/v0.10.7/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.10.7/app-release.apk`
-- SHA-256: `c1ebf18d2eae8e885cebe2703b058463069561512e470d26a23e4992021814a5`
+- Version: `0.12.0`
+- Version code: `43`
+- APK: [`releases/v0.12.0/app-release.apk`](releases/v0.12.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.12.0/app-release.apk`
+- SHA-256: `5745cc71f870eeabd38191b3299321eaa77646d534a7daed32f756ce83c550b0`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.10.7` removes the duplicate Mold input from Limit Switch. Mold is now
-owned only by Checksheet Mesin, while the five-form package remains compatible with
-legacy `checksheet-package-2026.08.2` submissions during the rollout transition.
-The active contract is `checksheet-package-2026.08.3`.
+Release `0.12.0` adds the two-hour checksheet for Shift 2/3, structured downtime,
+and Work Order evidence using private Cloudflare R2. The APK uses one operational
+flow per shift/slot, server timestamps for compliance, downtime handover, and
+retry-safe Photo Picker uploads. R2 use is protected by fail-closed storage and
+operation limits below the Cloudflare free-tier allowances.
 
 ## Publishing Rules
 

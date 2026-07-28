@@ -2,6 +2,34 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.12.0 - 2026-07-28
+
+### Added
+
+- Added a dedicated two-hour checksheet for production machines on Shift 2 and
+  Shift 3, including server-timestamp compliance, scheduled Cooling Tower input,
+  revision, review, and one submission per slot.
+- Added structured downtime reporting with fair wait-time separation and cross-shift
+  incident handover.
+- Added Work Orders with scored review and private photo/video evidence in Cloudflare
+  R2 through Android Photo Picker and retry-safe background uploads.
+
+### Safety
+
+- Added fail-closed R2 guards at 8 GB storage, 800,000 Class A operations, and
+  8,000,000 Class B operations over the app ledger window.
+- Added admin quota visibility and non-retryable APK handling when the Worker blocks
+  an upload with HTTP `507`.
+
+### Verified
+
+- APK SHA-256: `5745cc71f870eeabd38191b3299321eaa77646d534a7daed32f756ce83c550b0`.
+- Version code `43`, APK Signature Scheme v2, release lint/build, 48 Android unit
+  tests, install, and cold launch passed on Android Studio emulator API 35.
+- Worker `70/70`, Python `129/129`, D1 migration/recovery, production feature
+  acceptance, private R2 upload/download/delete, exact cleanup, and foreign-key
+  verification passed.
+
 ## 0.10.7 - 2026-07-26
 
 ### Fixed
