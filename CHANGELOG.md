@@ -2,6 +2,24 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.13.1 - 2026-07-29
+
+### Changed
+
+- Added the checksheet date to checked-PDF filenames using
+  `Checksheet Mesin - Checked - YYYY-MM-DD.pdf`.
+- Kept one combined PDF for multi-machine exports and rejected packets whose
+  checksheets do not share one valid date.
+
+### Verified
+
+- APK SHA-256: `772b0fec313c732134c7a21a796062e61c067c35596d0859c98e95249ca87b6b`.
+- Version code `45`, APK Signature Scheme v2 with the existing single signer,
+  Android unit tests `50/50`, release/debug lint and builds, and focused checked-PDF
+  instrumentation `2/2` passed on Android Studio emulator `MTC_API35`.
+- Release installation, version inspection, cold launch, live process, and empty
+  crash buffer passed on the same emulator before OTA publication.
+
 ## 0.13.0 - 2026-07-29
 
 ### Changed

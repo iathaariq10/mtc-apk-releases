@@ -4,18 +4,16 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.13.0`
-- Version code: `44`
-- APK: [`releases/v0.13.0/app-release.apk`](releases/v0.13.0/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.13.0/app-release.apk`
-- SHA-256: `d7e00eefb29f291266f30902cf44bc8285dde864cda15609efeef626242b3233`
+- Version: `0.13.1`
+- Version code: `45`
+- APK: [`releases/v0.13.1/app-release.apk`](releases/v0.13.1/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.13.1/app-release.apk`
+- SHA-256: `772b0fec313c732134c7a21a796062e61c067c35596d0859c98e95249ca87b6b`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.13.0` replaces manual daily shift assignment with a two-day rotation and
-member self-claim. The APK keeps expected and actual members separate, requires a
-replacement reason when they differ, and records `Produksi`, `Idle`, or `Off` for all
-six machines in every Shift 2/3 slot. Only production machines open the 40-point
-checksheet; the entire slot remains one reviewable submission.
+Release `0.13.1` names every checked-PDF export
+`Checksheet Mesin - Checked - YYYY-MM-DD.pdf` using the checksheet date. Multi-machine
+exports still require one shared valid date and continue to produce one combined PDF.
 
 ## Publishing Rules
 
