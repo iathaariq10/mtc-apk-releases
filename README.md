@@ -4,18 +4,18 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.12.0`
-- Version code: `43`
-- APK: [`releases/v0.12.0/app-release.apk`](releases/v0.12.0/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.12.0/app-release.apk`
-- SHA-256: `5745cc71f870eeabd38191b3299321eaa77646d534a7daed32f756ce83c550b0`
+- Version: `0.13.0`
+- Version code: `44`
+- APK: [`releases/v0.13.0/app-release.apk`](releases/v0.13.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.13.0/app-release.apk`
+- SHA-256: `d7e00eefb29f291266f30902cf44bc8285dde864cda15609efeef626242b3233`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.12.0` adds the two-hour checksheet for Shift 2/3, structured downtime,
-and Work Order evidence using private Cloudflare R2. The APK uses one operational
-flow per shift/slot, server timestamps for compliance, downtime handover, and
-retry-safe Photo Picker uploads. R2 use is protected by fail-closed storage and
-operation limits below the Cloudflare free-tier allowances.
+Release `0.13.0` replaces manual daily shift assignment with a two-day rotation and
+member self-claim. The APK keeps expected and actual members separate, requires a
+replacement reason when they differ, and records `Produksi`, `Idle`, or `Off` for all
+six machines in every Shift 2/3 slot. Only production machines open the 40-point
+checksheet; the entire slot remains one reviewable submission.
 
 ## Publishing Rules
 

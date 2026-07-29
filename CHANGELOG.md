@@ -2,6 +2,31 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.13.0 - 2026-07-29
+
+### Changed
+
+- Replaced mandatory daily admin assignment with an automatic two-day member
+  rotation and the `Mulai Shift Saya` member claim.
+- Added explicit expected/actual member context. Replacement claims require a reason
+  while preserving the authenticated member as operator/verifier.
+- Added per-slot status selection for all six canonical machines:
+  `Produksi`, `Idle`, or `Off`. Only production machines require the 40-point form,
+  and one slot remains one atomic submission/review.
+- Updated the APK to operations contract `2026.12.0`, slot package
+  `shift-slot-2026.10.0`, and Worker API `2026.12`.
+
+### Verified
+
+- APK SHA-256: `d7e00eefb29f291266f30902cf44bc8285dde864cda15609efeef626242b3233`.
+- Version code `44`, APK Signature Scheme v2 with the existing single signer,
+  Android unit tests, release lint, and clean release build passed.
+- Worker `71/71`, Python `131/131`, contract round-trip, production D1
+  recovery/migration, controlled shift/downtime/private-R2 acceptance, exact cleanup,
+  and foreign-key verification passed before OTA publication.
+- OTA public-hash, active manifest, emulator cold launch, and background-push evidence
+  must be recorded in the source repository after activation.
+
 ## 0.12.0 - 2026-07-28
 
 ### Added
