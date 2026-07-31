@@ -4,17 +4,17 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.14.0`
-- Version code: `46`
-- APK: [`releases/v0.14.0/app-release.apk`](releases/v0.14.0/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.14.0/app-release.apk`
-- SHA-256: `3765c7f8273c181bf8a81d416ff69057b3ede468b8cc02a4a2f422813bc42021`
+- Version: `0.15.0`
+- Version code: `47`
+- APK: [`releases/v0.15.0/app-release.apk`](releases/v0.15.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.15.0/app-release.apk`
+- SHA-256: `d21612a46cc19fd1ad0f6712e334d20488c797bd0f2ec4cfc78c90a1b58c62b4`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.14.0` adds one combined Downtime and Work Order summary page to every
-checksheet PDF, simplifies downtime to one gross duration, uses human-friendly WITA
-date/time pickers, slightly enlarges PDF text, and hardens checked-PDF, rotation,
-soft-delete, upload ownership, and OTA compatibility behavior.
+Release `0.15.0` adds explicit `-` (N/A) input to all applicable two-hour numeric,
+condition, leak, and Cooling Tower fields. Blank values remain incomplete, disabled
+fields are normalized to `-`, zero remains a real measurement, and Hopper Dryer keeps
+the dedicated `On`/`Off` choice.
 
 ## Publishing Rules
 

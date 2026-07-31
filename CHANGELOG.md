@@ -2,6 +2,27 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.15.0 - 2026-07-31
+
+### Changed
+
+- Added explicit `-` (N/A) input to applicable numeric, condition, leak, and Cooling
+  Tower fields in the Shift 2/3 two-hour checksheet.
+- Kept blank values incomplete, kept `0` as a real measurement, automatically
+  normalized disabled fields to `-`, and retained `On`/`Off` for Hopper Dryer.
+- Updated the operations contract to `2026.13.0`, slot package to
+  `shift-slot-2026.11.0`, and Worker API to `2026.14`.
+
+### Verified
+
+- APK SHA-256: `d21612a46cc19fd1ad0f6712e334d20488c797bd0f2ec4cfc78c90a1b58c62b4`.
+- Version code `47`, APK Signature Scheme v2 with the existing single signer,
+  Python `148/148`, Worker `84/84`, Android unit `66/66`, lint/build, EXE smoke,
+  and minimal emulator verification passed.
+- Isolated staging acceptance passed shift, downtime, Work Order/private R2, two
+  five-form submissions, revision, batch approval, PC import/PDF, background FCM,
+  and operational alert recovery with exact cleanup and zero foreign-key violations.
+
 ## 0.14.0 - 2026-07-31
 
 ### Added
