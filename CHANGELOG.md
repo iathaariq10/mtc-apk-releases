@@ -2,6 +2,34 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.14.0 - 2026-07-31
+
+### Added
+
+- Added exactly one combined Downtime and Work Order summary page to every checksheet
+  PDF export, including scoped empty states and bounded detail rows.
+- Added effective-dated shift rotation safety, audited checksheet soft-delete, and
+  strict OTA compatibility validation across the Worker and APK.
+
+### Changed
+
+- Simplified downtime to one gross duration from incident start until machine
+  recovery; response, active-work, and waiting breakdowns are no longer shown.
+- Replaced manual ISO-8601 entry with WITA date/time pickers and slightly enlarged
+  text throughout Shift 1, Shift 2/3, and operations-summary PDF pages.
+- Hardened checked-PDF packet validation, atomic/non-overwriting export, and
+  account-bound WorkManager media uploads.
+
+### Verified
+
+- APK SHA-256: `3765c7f8273c181bf8a81d416ff69057b3ede468b8cc02a4a2f422813bc42021`.
+- Version code `46`, APK Signature Scheme v2 with the existing single signer,
+  Python `146/146`, Worker `83/83`, Android unit `65/65`, lint/build, package
+  round-trip, and focused emulator checks passed.
+- Isolated staging acceptance passed two five-form submissions, pending revision,
+  batch approval, PC import, combined PDF, private-R2 operations, background FCM,
+  and operational alert recovery with exact cleanup and zero foreign-key violations.
+
 ## 0.13.1 - 2026-07-29
 
 ### Changed

@@ -4,16 +4,17 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.13.1`
-- Version code: `45`
-- APK: [`releases/v0.13.1/app-release.apk`](releases/v0.13.1/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.13.1/app-release.apk`
-- SHA-256: `772b0fec313c732134c7a21a796062e61c067c35596d0859c98e95249ca87b6b`
+- Version: `0.14.0`
+- Version code: `46`
+- APK: [`releases/v0.14.0/app-release.apk`](releases/v0.14.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.14.0/app-release.apk`
+- SHA-256: `3765c7f8273c181bf8a81d416ff69057b3ede468b8cc02a4a2f422813bc42021`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.13.1` names every checked-PDF export
-`Checksheet Mesin - Checked - YYYY-MM-DD.pdf` using the checksheet date. Multi-machine
-exports still require one shared valid date and continue to produce one combined PDF.
+Release `0.14.0` adds one combined Downtime and Work Order summary page to every
+checksheet PDF, simplifies downtime to one gross duration, uses human-friendly WITA
+date/time pickers, slightly enlarges PDF text, and hardens checked-PDF, rotation,
+soft-delete, upload ownership, and OTA compatibility behavior.
 
 ## Publishing Rules
 
