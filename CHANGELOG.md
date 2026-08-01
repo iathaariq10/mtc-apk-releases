@@ -2,6 +2,29 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.16.0 - 2026-08-01
+
+### Changed
+
+- Added explicit `OK` / `NG` / `-` safety input to the Shift 1 checksheet and three
+  measurement contexts: hydraulic cycle, lubrication-pump cycle, and heater state.
+- Kept non-applicable or non-steady measurements out of machine-condition KPI while
+  preserving them as evidence in checked PDF output; door and Mold Close remain the
+  independent safety gate, while Fuse `NG` remains directly critical.
+- Updated the form contract to `2026.08.4` and the compatible Worker API source to
+  `2026.15`. The OTA remains optional for APK `0.13.1+` (`force_update=false`).
+
+### Verified
+
+- APK SHA-256: `6fa7eab73d1f4d8d2ceb2608b7eb65eb1adae0ae023e3a1f042ae625d43fa701`.
+- Version code `48`, APK Signature Scheme v2, targeted Python `74/74`, Worker
+  compatibility `28/28`, APK focused unit tests, and release lint/build passed.
+- Staging then production Worker/form activation passed. Production D1 recovery was
+  verified before activation: 41 tables, integrity `ok`, and zero foreign-key
+  violations. No trial account, submission, or production data was created.
+- Emulator cold-launch verification is pending because this Windows profile has no
+  registered Android virtual device; no physical-device test was substituted.
+
 ## 0.15.0 - 2026-07-31
 
 ### Changed

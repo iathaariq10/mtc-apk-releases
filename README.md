@@ -4,17 +4,18 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.15.0`
-- Version code: `47`
-- APK: [`releases/v0.15.0/app-release.apk`](releases/v0.15.0/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.15.0/app-release.apk`
-- SHA-256: `d21612a46cc19fd1ad0f6712e334d20488c797bd0f2ec4cfc78c90a1b58c62b4`
+- Version: `0.16.0`
+- Version code: `48`
+- APK: [`releases/v0.16.0/app-release.apk`](releases/v0.16.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.16.0/app-release.apk`
+- SHA-256: `6fa7eab73d1f4d8d2ceb2608b7eb65eb1adae0ae023e3a1f042ae625d43fa701`
+- OTA policy: minimum `0.13.1`, `force_update=false`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.15.0` adds explicit `-` (N/A) input to all applicable two-hour numeric,
-condition, leak, and Cooling Tower fields. Blank values remain incomplete, disabled
-fields are normalized to `-`, zero remains a real measurement, and Hopper Dryer keeps
-the dedicated `On`/`Off` choice.
+Release `0.16.0` adds explicit `OK` / `NG` / `-` safety input and measurement context
+for hydraulic pressure, lubrication pumps, and heater operation in the Shift 1
+checksheet. It keeps a measurement that is not applicable from distorting machine
+condition KPI while retaining it as clear evidence in the checked PDF.
 
 ## Publishing Rules
 
