@@ -4,19 +4,30 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
+- Version: `0.19.1`
+- Version code: `52`
+- APK: [`releases/v0.19.1/app-release.apk`](releases/v0.19.1/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.19.1/app-release.apk`
+- SHA-256: `a51b8b72ca027bc16bb0a1a9fee027c5ecaa6b29258b04f6a3aaafa59cfe795b`
+- OTA policy: minimum `0.19.0`, `force_update=false`.
+
+Release `0.19.1` replaces remaining manual date inputs with calendar controls across
+schedule, history/filter, operations, Work Order, and related administration flows.
+The two-hour PDF now uses vertically merged `Area / Checkpoint / Item` descriptors
+while keeping each slot value separate. Worker `2026.18` and operations contract
+`2026.16.0` remain compatible and unchanged. Signed build, focused calendar/PDF tests,
+visual PDF review, responsive screenshot, and emulator cold launch passed.
+
+## Previous Release 0.19.0
+
 - Version: `0.19.0`
 - Version code: `51`
 - APK: [`releases/v0.19.0/app-release.apk`](releases/v0.19.0/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.19.0/app-release.apk`
 - SHA-256: `2af1dd360b5cd4122eada666637c03011eef3a7675435a6d49499c84a556a238`
-- OTA policy: minimum `0.18.0`, `force_update=true`.
+- Final policy before `0.19.1`: minimum `0.18.0`, `force_update=true`.
 
-Release `0.19.0` fixes the two-hour PDF share crash, lets members record actual
-downtime occurrence and recovery time in one complete form or hand the event over,
-uses a calendar with automatic loading for shift compliance/review, and limits manual
-`-` to numeric two-hour fields. Worker `2026.18` and operations contract `2026.16.0`
-are active. The public artifact hash, production manifest, compatibility gate, and
-emulator cold launch are verified.
+Release `0.19.0` fixed the two-hour PDF share crash, added actual downtime recovery
+time, calendar-based shift compliance, and restricted manual `-` to numeric fields.
 
 ## Previous Release 0.18.0
 

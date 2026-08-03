@@ -2,6 +2,27 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.19.1 - 2026-08-04
+
+### Changed
+
+- Replaced remaining manual date inputs with calendar controls in schedule, history
+  filters, two-hour history, Work Order, and related APK/EXE operational flows.
+- Reworked the two-hour PDF descriptor table into `Area / Checkpoint / Item`, with
+  consecutive Area and Checkpoint cells vertically merged while every Item and slot
+  value remains separate.
+- Set the intended OTA boundary to minimum `0.19.0` and `force_update=false`; this
+  client-only patch does not change Worker API or operations contract versions.
+
+### Verified
+
+- APK version code `52`, 13,434,727 bytes, SHA-256
+  `a51b8b72ca027bc16bb0a1a9fee027c5ecaa6b29258b04f6a3aaafa59cfe795b`, one signer,
+  and APK Signature Scheme v2 verification passed.
+- Focused Python/Kotlin tests, lint vital, release build, four calendar/PDF emulator
+  cases, responsive screenshot flow, seven-page APK PDF render, and signed cold launch
+  passed on `MTC_API35`. Physical-device and broad UI testing were not run.
+
 ## 0.19.0 - 2026-08-04
 
 ### Changed
