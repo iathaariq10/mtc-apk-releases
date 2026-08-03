@@ -2,6 +2,39 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.19.0 - 2026-08-04 (OTA activation pending)
+
+### Changed
+
+- Restricted the explicit two-hour `Tidak Berlaku (-)` choice to numeric fields.
+  Enabled condition and leak checks now require `OK/NG` or `centang/X`; disabled and
+  historical legacy values remain compatible.
+- Replaced manual shift-compliance date text with a calendar that automatically loads
+  Compliance, Review, or Member Results for the selected date.
+- Combined downtime occurrence, actual recovery, corrective action, root cause, and
+  sparepart usage in one member form, while retaining open-event and next-shift
+  handover paths.
+
+### Fixed
+
+- Fixed the two-hour PDF share crash by aligning the cache path with `FileProvider`,
+  granting read access through `ClipData`, and returning share/create errors to the UI.
+
+### Verified
+
+- APK version code `51`, 13,418,343 bytes, SHA-256
+  `2af1dd360b5cd4122eada666637c03011eef3a7675435a6d49499c84a556a238`, and APK
+  Signature Scheme v2 verification passed.
+- Focused workflow UI `3/3`, PDF exporter `1/1`, and actual Android system chooser
+  `1/1` passed on `MTC_API35`; broad UI and physical-device testing were not run.
+- Staging acceptance passed the two-hour operations/private-R2 round-trip, package
+  revision/import/PDF, FID registration for `anggota`, `admin`, and `super_admin`, and
+  a visible background notification. Exact trial cleanup and foreign-key checks passed.
+- Production D1 backup restored successfully with 43 tables, integrity `ok`, and zero
+  foreign-key violations. Worker `2026.18` and operations contract `2026.16.0` /
+  `shift-slot-2026.13.0` are active; production retained eight Shift 1 submissions,
+  six two-hour submissions, and two downtime events with zero trial rows.
+
 ## 0.18.0 - 2026-08-03
 
 ### Added
