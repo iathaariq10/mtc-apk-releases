@@ -4,18 +4,18 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.16.0`
-- Version code: `48`
-- APK: [`releases/v0.16.0/app-release.apk`](releases/v0.16.0/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.16.0/app-release.apk`
-- SHA-256: `6fa7eab73d1f4d8d2ceb2608b7eb65eb1adae0ae023e3a1f042ae625d43fa701`
+- Version: `0.18.0`
+- Version code: `50`
+- APK: [`releases/v0.18.0/app-release.apk`](releases/v0.18.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.18.0/app-release.apk`
+- SHA-256: `82d93a31048d34eb28c4fbad4a186c083553cc618611463483cc6bb0299a2463`
 - OTA policy: minimum `0.13.1`, `force_update=false`
 - Live manifest: `https://mtc-maintenance-api.iathaariq10.workers.dev/v1/update/manifest`
 
-Release `0.16.0` adds explicit `OK` / `NG` / `-` safety input and measurement context
-for hydraulic pressure, lubrication pumps, and heater operation in the Shift 1
-checksheet. It keeps a measurement that is not applicable from distorting machine
-condition KPI while retaining it as clear evidence in the checked PDF.
+Release `0.18.0` completes the two-hour checksheet workflow with mold configuration,
+draft/revision history, late-reason handling, admin review, and a 500 C Thermobox
+limit. It also adds sparepart usage to Downtime/Work Order, role-correct FID push
+registration, clear notifications, and a dated PDF with one combined operations page.
 
 ## Publishing Rules
 

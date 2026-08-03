@@ -2,6 +2,44 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.18.0 - 2026-08-03
+
+### Added
+
+- Added mold name plus Slider, Sayap, and Eject configuration to each production
+  machine in the Shift 2/3 two-hour checksheet.
+- Added editable local drafts, Pending Review revision, member history/PDF export,
+  late-reason capture after the on-time window, and admin two-hour review access.
+- Added sparepart name, quantity, and unit to Downtime and Work Order records and to
+  their single combined PDF summary page.
+- Added clear-notification controls and Firebase Installation registration for
+  `anggota`, `admin`, and `super_admin` audiences.
+
+### Changed
+
+- Raised the Thermobox input ceiling to `500 C`, retained explicit `-` for
+  non-applicable two-hour checkpoints, and kept downtime as one gross duration from
+  incident start until machine recovery.
+- Removed the redundant Shift 1 section context labels requested by operations.
+- Enlarged two-hour PDF table text, included the date in the filename, and corrected
+  page numbering to include the combined Downtime/Work Order appendix.
+- Updated the compatible Worker API to `2026.17`; OTA remains optional for APK
+  `0.13.1+` (`force_update=false`).
+
+### Verified
+
+- APK SHA-256: `82d93a31048d34eb28c4fbad4a186c083553cc618611463483cc6bb0299a2463`.
+- Version code `50`, APK Signature Scheme v2 with one existing signer, release build,
+  lint vital, focused Kotlin/Python/Worker tests, and emulator cold launch passed.
+- APK-generated two-hour PDF was inspected across all seven pages for six machines,
+  four slots, mold controls, `-`, gross downtime, Work Order, and sparepart usage.
+- Isolated staging acceptance passed operations/private R2, checksheet revision and
+  PC import, FID registration for all three roles, visible background notification,
+  exact cleanup, and zero foreign-key violations.
+- Production D1 backup/recovery was verified before the three ordered migrations;
+  Worker `2026.17` deployed with production data counts intact and zero foreign-key
+  violations. No trial account or trial submission was created in production.
+
 ## 0.16.0 - 2026-08-01
 
 ### Changed
