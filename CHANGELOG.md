@@ -2,7 +2,7 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
-## 0.19.0 - 2026-08-04 (OTA activation pending)
+## 0.19.0 - 2026-08-04
 
 ### Changed
 
@@ -34,8 +34,16 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
   foreign-key violations. Worker `2026.18` and operations contract `2026.16.0` /
   `shift-slot-2026.13.0` are active; production retained eight Shift 1 submissions,
   six two-hour submissions, and two downtime events with zero trial rows.
+- Public URL and manifest hashes match the local artifact. The live manifest exposes
+  `0.19.0`, minimum `0.18.0`, API `2026.18`, and `force_update=true`; `0.18.0` receives
+  HTTP 426 while `0.19.0` reaches the normal authentication boundary. The downloaded
+  public APK installed and cold-launched on `MTC_API35` with no crash marker.
 
 ## 0.18.0 - 2026-08-03
+
+The manifest was subsequently tightened to minimum `0.18.0` with
+`force_update=true`; that was the observed live boundary immediately before `0.19.0`
+activation.
 
 ### Added
 
