@@ -11,7 +11,7 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 - Reworked the two-hour PDF descriptor table into `Area / Checkpoint / Item`, with
   consecutive Area and Checkpoint cells vertically merged while every Item and slot
   value remains separate.
-- Set the intended OTA boundary to minimum `0.19.0` and `force_update=false`; this
+- Set the active OTA boundary to minimum `0.19.0` and `force_update=false`; this
   client-only patch does not change Worker API or operations contract versions.
 
 ### Verified
@@ -22,6 +22,15 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 - Focused Python/Kotlin tests, lint vital, release build, four calendar/PDF emulator
   cases, responsive screenshot flow, seven-page APK PDF render, and signed cold launch
   passed on `MTC_API35`. Physical-device and broad UI testing were not run.
+- The public URL, live manifest, and local APK match at 13,434,727 bytes and SHA-256
+  `a51b8b72ca027bc16bb0a1a9fee027c5ecaa6b29258b04f6a3aaafa59cfe795b`.
+  The manifest exposes `0.19.1`, minimum `0.19.0`, API `2026.18`, and
+  `force_update=false`; `0.18.0` receives HTTP 426 while `0.19.0` and `0.19.1`
+  reach the normal authentication boundary.
+- A full D1 backup preceded activation. Exactly one OTA manifest and one operations
+  contract remain active, foreign keys are clean, and trial-pattern counts are zero
+  across users, sessions, notifications, checksheets, two-hour slots, downtime, and
+  Work Orders.
 
 ## 0.19.0 - 2026-08-04
 

@@ -17,6 +17,9 @@ The two-hour PDF now uses vertically merged `Area / Checkpoint / Item` descripto
 while keeping each slot value separate. Worker `2026.18` and operations contract
 `2026.16.0` remain compatible and unchanged. Signed build, focused calendar/PDF tests,
 visual PDF review, responsive screenshot, and emulator cold launch passed.
+The public download and live OTA manifest match this artifact byte-for-byte. The live
+manifest exposes `0.19.1`, minimum `0.19.0`, API `2026.18`, and
+`force_update=false`; the production hygiene audit found no trial data.
 
 ## Previous Release 0.19.0
 
