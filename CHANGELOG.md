@@ -11,7 +11,7 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 - Added a durable Activity-stop flush and kept the two-hour manual save action as an
   explicit confirmation path. Two-hour drafts remain scoped by owner/run/slot and
   correction submission revision.
-- Set the intended OTA boundary to minimum `0.19.1` and `force_update=true`, so every
+- Set the active OTA boundary to minimum `0.19.1` and `force_update=true`, so every
   client below `0.19.2` must install this reliability patch. Worker API, D1 schema, and
   operations contract versions do not change.
 
@@ -30,6 +30,16 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 - Android unit tests `80/80`, focused draft/lifecycle instrumentation `4/4`, responsive
   screenshot instrumentation `2/2`, lint vital, signed release build, install, and cold
   launch passed on `MTC_API35`. Physical-device and broad UI testing were not run.
+- The public URL, live manifest, and local APK match at 13,434,727 bytes and SHA-256
+  `5b78dffbeb6d70f399dcf80fce0cba53d62194abb8590c76c259108957202613`.
+  The manifest exposes `0.19.2`, minimum `0.19.1`, API `2026.18`, and
+  `force_update=true`; versions `0.18.0`, `0.19.0`, and `0.19.1` receive HTTP 426,
+  while `0.19.2` reaches the normal authentication boundary.
+- A full D1 backup preceded activation and restored with 43 tables, 54 indexes, 36
+  triggers, integrity `ok`, and clean foreign keys. Exactly one OTA manifest and one
+  operations contract remain active; trial-pattern counts are zero across users,
+  sessions, devices, push targets, notifications, checksheets, two-hour slots,
+  downtime, and Work Orders.
 
 ## 0.19.1 - 2026-08-04
 

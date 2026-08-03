@@ -9,7 +9,7 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 - APK: [`releases/v0.19.2/app-release.apk`](releases/v0.19.2/app-release.apk)
 - Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.19.2/app-release.apk`
 - SHA-256: `5b78dffbeb6d70f399dcf80fce0cba53d62194abb8590c76c259108957202613`
-- Intended OTA policy: minimum `0.19.1`, `force_update=true`.
+- Active OTA policy: minimum `0.19.1`, `force_update=true`.
 
 Release `0.19.2` preserves unfinished Shift 1 and two-hour checksheet work when a
 member changes tabs, opens another application, presses Back, or Android recreates the
@@ -22,6 +22,13 @@ The signed artifact passed 80 Android unit tests, focused draft/lifecycle
 instrumentation, one responsive screenshot flow at two viewports, lint vital, signature
 verification, install, and emulator cold launch. Physical-device and broad UI testing
 were not run.
+The public download and live OTA manifest match this artifact byte-for-byte. The live
+manifest exposes `0.19.2`, minimum `0.19.1`, API `2026.18`, and
+`force_update=true`. Clients `0.18.0` and `0.19.0` are below minimum, client `0.19.1`
+is blocked by the forced-update policy, and `0.19.2` reaches the normal authentication
+boundary. A verified D1 backup preceded activation; the post-release audit found one
+active manifest, one active operations contract, clean foreign keys, and no
+trial/acceptance-pattern rows.
 
 ## Previous Release 0.19.1
 
