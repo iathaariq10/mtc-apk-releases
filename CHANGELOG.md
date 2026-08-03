@@ -2,6 +2,35 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.19.2 - 2026-08-04
+
+### Changed
+
+- Added automatic local persistence for Shift 1 and two-hour checksheet edits when
+  values change, tabs/screens change, Back is used, or the Activity enters background.
+- Added a durable Activity-stop flush and kept the two-hour manual save action as an
+  explicit confirmation path. Two-hour drafts remain scoped by owner/run/slot and
+  correction submission revision.
+- Set the intended OTA boundary to minimum `0.19.1` and `force_update=true`, so every
+  client below `0.19.2` must install this reliability patch. Worker API, D1 schema, and
+  operations contract versions do not change.
+
+### Fixed
+
+- Prevented unfinished checksheet values from disappearing when members temporarily
+  leave the form or Android recreates the Activity.
+- Prevented a completed two-hour submission from being recreated by a late lifecycle
+  callback, and prevented restored editor context from crossing into a different run.
+
+### Verified
+
+- APK version code `53`, 13,434,727 bytes, SHA-256
+  `5b78dffbeb6d70f399dcf80fce0cba53d62194abb8590c76c259108957202613`, one signer,
+  and APK Signature Scheme v2 verification passed.
+- Android unit tests `80/80`, focused draft/lifecycle instrumentation `4/4`, responsive
+  screenshot instrumentation `2/2`, lint vital, signed release build, install, and cold
+  launch passed on `MTC_API35`. Physical-device and broad UI testing were not run.
+
 ## 0.19.1 - 2026-08-04
 
 ### Changed

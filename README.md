@@ -4,6 +4,27 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
+- Version: `0.19.2`
+- Version code: `53`
+- APK: [`releases/v0.19.2/app-release.apk`](releases/v0.19.2/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.19.2/app-release.apk`
+- SHA-256: `5b78dffbeb6d70f399dcf80fce0cba53d62194abb8590c76c259108957202613`
+- Intended OTA policy: minimum `0.19.1`, `force_update=true`.
+
+Release `0.19.2` preserves unfinished Shift 1 and two-hour checksheet work when a
+member changes tabs, opens another application, presses Back, or Android recreates the
+Activity. Normal edits are autosaved without blocking; Activity stop and explicit
+two-hour saves flush durably. Two-hour drafts remain isolated by owner/run/slot and
+correction submission revision, while successful submission cannot recreate a final
+draft. Worker `2026.18` and operations contract `2026.16.0` remain unchanged.
+
+The signed artifact passed 80 Android unit tests, focused draft/lifecycle
+instrumentation, one responsive screenshot flow at two viewports, lint vital, signature
+verification, install, and emulator cold launch. Physical-device and broad UI testing
+were not run.
+
+## Previous Release 0.19.1
+
 - Version: `0.19.1`
 - Version code: `52`
 - APK: [`releases/v0.19.1/app-release.apk`](releases/v0.19.1/app-release.apk)
@@ -17,9 +38,8 @@ The two-hour PDF now uses vertically merged `Area / Checkpoint / Item` descripto
 while keeping each slot value separate. Worker `2026.18` and operations contract
 `2026.16.0` remain compatible and unchanged. Signed build, focused calendar/PDF tests,
 visual PDF review, responsive screenshot, and emulator cold launch passed.
-The public download and live OTA manifest match this artifact byte-for-byte. The live
-manifest exposes `0.19.1`, minimum `0.19.0`, API `2026.18`, and
-`force_update=false`; the production hygiene audit found no trial data.
+The final `0.19.1` policy before `0.19.2` activation used minimum `0.19.0` and
+`force_update=false`.
 
 ## Previous Release 0.19.0
 
