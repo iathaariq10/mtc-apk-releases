@@ -17,8 +17,8 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
   calendar day. Catch-up submissions remain late and require a nonblank reason.
 - Expanded the Shift 1 checked-PDF operations appendix to Shift 1/2/3 on the same
   operational date, owner, and machines; two-hour PDFs remain exact-shift.
-- Prepared the forced OTA boundary as minimum `0.19.2`, `force_update=true`. The live
-  manifest remains `0.19.2` until the public candidate hash is verified.
+- Activated the forced OTA boundary as minimum `0.19.2`, `force_update=true`, with
+  Worker API `2026.19` and operations contract `2026.17.0`.
 
 ### Fixed
 
@@ -39,6 +39,13 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
   integrity `ok`, and clean foreign keys. Staging catch-up acceptance passed and left
   zero temporary users, sessions, devices, runs, submissions, Downtime, and Work Order
   rows. No mutating production acceptance was run.
+- The public URL, live manifest, and local APK match at 13,451,111 bytes and SHA-256
+  `3d3ea52a090bddca13dafd9a48d9cb84f028ddf238adae1a1346cdcc8d7f54a1`.
+  The manifest exposes `0.19.3`, minimum `0.19.2`, API `2026.19`, and
+  `force_update=true`; clients `0.19.1` and `0.19.2` receive HTTP 426, while `0.19.3`
+  reaches the normal authentication boundary. Exactly one OTA manifest and one
+  operations contract remain active; production foreign keys and trial-user checks
+  are clean, and operational row counts were unchanged by activation.
 
 ## 0.19.2 - 2026-08-04
 

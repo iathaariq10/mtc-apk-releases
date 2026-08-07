@@ -9,7 +9,7 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 - APK: [`releases/v0.19.3/app-release.apk`](releases/v0.19.3/app-release.apk)
 - Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.19.3/app-release.apk`
 - SHA-256: `3d3ea52a090bddca13dafd9a48d9cb84f028ddf238adae1a1346cdcc8d7f54a1`
-- Intended OTA policy: minimum `0.19.2`, `force_update=true`.
+- Active OTA policy: minimum `0.19.2`, `force_update=true`.
 
 Release `0.19.3` keeps the previous Shift 3 context available at the exact 06:00 WITA
 boundary, permits same-calendar-day catch-up with a mandatory late reason, and exposes
@@ -25,8 +25,10 @@ slot payload remains `shift-slot-2026.13.0` and no D1 schema migration was requi
 The signed artifact passed focused Python/Worker/Kotlin tests, lint vital, one focused
 standalone-PDF instrumentation test, signature verification, install, and cold launch
 on `MTC_API35`. Focused staging acceptance verified the Shift 3 06:00 catch-up and
-cleanup. Physical-device and broad UI testing were not run. The OTA manifest remains
-on `0.19.2` until this public artifact is fetched and its hash is verified.
+cleanup. Physical-device and broad UI testing were not run. The public download and
+live manifest match this artifact byte-for-byte. The live manifest exposes `0.19.3`,
+minimum `0.19.2`, API `2026.19`, and `force_update=true`; older supported clients are
+blocked until updated.
 
 ## Previous Release 0.19.2
 
