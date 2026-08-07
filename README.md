@@ -4,12 +4,38 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
+- Version: `0.19.3`
+- Version code: `54`
+- APK: [`releases/v0.19.3/app-release.apk`](releases/v0.19.3/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.19.3/app-release.apk`
+- SHA-256: `3d3ea52a090bddca13dafd9a48d9cb84f028ddf238adae1a1346cdcc8d7f54a1`
+- Intended OTA policy: minimum `0.19.2`, `force_update=true`.
+
+Release `0.19.3` keeps the previous Shift 3 context available at the exact 06:00 WITA
+boundary, permits same-calendar-day catch-up with a mandatory late reason, and exposes
+same-day correction from two-hour history. At 22:00-23:59, every still-valid Shift 2
+or Shift 3 context remains selectable instead of hiding the earlier morning context.
+
+Shift 1 checked PDFs now load Downtime and Work Order data across all three shifts for
+the same operational date, owner, and machines. Members can also create a standalone
+dated Downtime/Work Order PDF from either operations menu without requiring a Shift 1
+checksheet. Worker API `2026.19` and operations contract `2026.17.0` are active; the
+slot payload remains `shift-slot-2026.13.0` and no D1 schema migration was required.
+
+The signed artifact passed focused Python/Worker/Kotlin tests, lint vital, one focused
+standalone-PDF instrumentation test, signature verification, install, and cold launch
+on `MTC_API35`. Focused staging acceptance verified the Shift 3 06:00 catch-up and
+cleanup. Physical-device and broad UI testing were not run. The OTA manifest remains
+on `0.19.2` until this public artifact is fetched and its hash is verified.
+
+## Previous Release 0.19.2
+
 - Version: `0.19.2`
 - Version code: `53`
 - APK: [`releases/v0.19.2/app-release.apk`](releases/v0.19.2/app-release.apk)
 - Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.19.2/app-release.apk`
 - SHA-256: `5b78dffbeb6d70f399dcf80fce0cba53d62194abb8590c76c259108957202613`
-- Active OTA policy: minimum `0.19.1`, `force_update=true`.
+- Final OTA policy before `0.19.3`: minimum `0.19.1`, `force_update=true`.
 
 Release `0.19.2` preserves unfinished Shift 1 and two-hour checksheet work when a
 member changes tabs, opens another application, presses Back, or Android recreates the

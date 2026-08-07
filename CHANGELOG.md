@@ -2,6 +2,44 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.19.3 - 2026-08-07
+
+### Added
+
+- Added standalone daily Downtime/Work Order PDF export for members from both the
+  Downtime and Work Order menus, with a calendar and a dated filename.
+- Added a same-day correction action for two-hour submissions that are still pending
+  review or need correction.
+
+### Changed
+
+- Kept every eligible two-hour context available through the end of the slot's WITA
+  calendar day. Catch-up submissions remain late and require a nonblank reason.
+- Expanded the Shift 1 checked-PDF operations appendix to Shift 1/2/3 on the same
+  operational date, owner, and machines; two-hour PDFs remain exact-shift.
+- Prepared the forced OTA boundary as minimum `0.19.2`, `force_update=true`. The live
+  manifest remains `0.19.2` until the public candidate hash is verified.
+
+### Fixed
+
+- Preserved access to the previous Shift 3 and its 06:00 slot when the global shift
+  context changes to Shift 1 at exactly 06:00 WITA.
+- Prevented an earlier valid Shift 3 context from disappearing at 22:00 while Shift 2
+  catch-up is also still available.
+
+### Verified
+
+- APK version code `54`, 13,451,111 bytes, SHA-256
+  `3d3ea52a090bddca13dafd9a48d9cb84f028ddf238adae1a1346cdcc8d7f54a1`, one signer,
+  and APK Signature Scheme v2 verification passed.
+- Focused Python `16/16`, Worker `17/17`, Kotlin unit/compile, lint vital, signed build,
+  focused standalone-PDF instrumentation `1/1`, install, and cold launch passed on
+  `MTC_API35`; the crash buffer was clean.
+- Production/staging backups restored with 43 tables, 54 indexes, 36 triggers,
+  integrity `ok`, and clean foreign keys. Staging catch-up acceptance passed and left
+  zero temporary users, sessions, devices, runs, submissions, Downtime, and Work Order
+  rows. No mutating production acceptance was run.
+
 ## 0.19.2 - 2026-08-04
 
 ### Changed
