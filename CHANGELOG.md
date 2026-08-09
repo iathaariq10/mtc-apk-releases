@@ -28,6 +28,13 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 - The production backup restored with 43 tables, 54 indexes, 36 triggers, integrity
   `ok`, and clean foreign keys. Worker `c9a45f00-2e2c-4ae8-bf8d-fb26f718eef8` and
   exactly one operations contract `2026.18.0` are active.
+- The public URL, live manifest, and local APK match at 13,467,495 bytes and SHA-256
+  `8d9ee9eb52550f418967444a5940661352c8ded8cad35befaa29e900e14e8199`.
+  The manifest exposes `0.20.0`, minimum `0.19.3`, API `2026.20`, and
+  `force_update=true`; `0.19.2` is below minimum, `0.19.3` is blocked by forced
+  update, and `0.20.0` reaches the normal authentication boundary.
+- The downloaded public APK installed and cold-launched on `MTC_API35` in 1,553 ms;
+  its process remained alive and the crash buffer was clean.
 
 ## 0.19.3 - 2026-08-07
 

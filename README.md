@@ -28,7 +28,11 @@ verified revision/import/PDF plus a visible background FCM notification for `ang
 `admin`, and `super_admin`, then cleaned every trial marker. The production backup
 restored with 43 tables, 54 indexes, 36 triggers, integrity `ok`, and clean foreign
 keys. Physical-device and broad UI testing were not run. The live manifest is
-activated only after the public download hash is verified.
+active at `0.20.0`, minimum `0.19.3`, API `2026.20`, and `force_update=true`.
+The public download and manifest match the local signed artifact byte-for-byte;
+`0.19.2` is below minimum, `0.19.3` is blocked by forced update, and `0.20.0`
+reaches the normal authentication boundary. The downloaded APK installed and
+cold-launched successfully on `MTC_API35` with a clean crash buffer.
 
 ## Previous Release 0.19.3
 
