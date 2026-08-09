@@ -4,31 +4,44 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
+- Version: `0.20.0`
+- Version code: `55`
+- APK: [`releases/v0.20.0/app-release.apk`](releases/v0.20.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.20.0/app-release.apk`
+- SHA-256: `8d9ee9eb52550f418967444a5940661352c8ded8cad35befaa29e900e14e8199`
+- OTA rollout target: minimum `0.19.3`, `force_update=true`.
+
+Release `0.20.0` treats the Shift 1 checksheet schedule as one inclusive two-day
+block. A submission on either day completes the machine target for the block; a
+second package for the same machine is rejected and correction continues through
+history. Shift 1 and two-hour submissions remain editable by their owner until an
+admin finalizes them.
+
+Members can reopen their Downtime report or a submitted Work Order result while it is
+still awaiting verification. Every mutable review action carries the displayed
+revision, so stale admin decisions are rejected. Worker API `2026.20` and operations
+contract `2026.18.0` are deployed; no D1 schema migration was required.
+
+The signed artifact passed Python `193/193`, Worker `96/96`, Android unit `85/85`,
+lint vital, signature verification, and release build. Controlled staging acceptance
+verified revision/import/PDF plus a visible background FCM notification for `anggota`,
+`admin`, and `super_admin`, then cleaned every trial marker. The production backup
+restored with 43 tables, 54 indexes, 36 triggers, integrity `ok`, and clean foreign
+keys. Physical-device and broad UI testing were not run. The live manifest is
+activated only after the public download hash is verified.
+
+## Previous Release 0.19.3
+
 - Version: `0.19.3`
 - Version code: `54`
 - APK: [`releases/v0.19.3/app-release.apk`](releases/v0.19.3/app-release.apk)
 - Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.19.3/app-release.apk`
 - SHA-256: `3d3ea52a090bddca13dafd9a48d9cb84f028ddf238adae1a1346cdcc8d7f54a1`
-- Active OTA policy: minimum `0.19.2`, `force_update=true`.
+- Final OTA policy before `0.20.0`: minimum `0.19.2`, `force_update=true`.
 
-Release `0.19.3` keeps the previous Shift 3 context available at the exact 06:00 WITA
-boundary, permits same-calendar-day catch-up with a mandatory late reason, and exposes
-same-day correction from two-hour history. At 22:00-23:59, every still-valid Shift 2
-or Shift 3 context remains selectable instead of hiding the earlier morning context.
-
-Shift 1 checked PDFs now load Downtime and Work Order data across all three shifts for
-the same operational date, owner, and machines. Members can also create a standalone
-dated Downtime/Work Order PDF from either operations menu without requiring a Shift 1
-checksheet. Worker API `2026.19` and operations contract `2026.17.0` are active; the
-slot payload remains `shift-slot-2026.13.0` and no D1 schema migration was required.
-
-The signed artifact passed focused Python/Worker/Kotlin tests, lint vital, one focused
-standalone-PDF instrumentation test, signature verification, install, and cold launch
-on `MTC_API35`. Focused staging acceptance verified the Shift 3 06:00 catch-up and
-cleanup. Physical-device and broad UI testing were not run. The public download and
-live manifest match this artifact byte-for-byte. The live manifest exposes `0.19.3`,
-minimum `0.19.2`, API `2026.19`, and `force_update=true`; older supported clients are
-blocked until updated.
+Release `0.19.3` kept the Shift 3 context at 06:00 WITA, enabled same-day catch-up
+and correction, expanded Shift 1 PDF operations data across shifts, and added a
+standalone dated Downtime/Work Order PDF.
 
 ## Previous Release 0.19.2
 

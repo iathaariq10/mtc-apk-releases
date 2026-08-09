@@ -2,6 +2,33 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.20.0 - 2026-08-09
+
+### Changed
+
+- Treat the Shift 1 schedule as one inclusive two-day block. A package submitted on
+  either day completes the machine target for that block, while duplicate packages
+  are rejected and corrections remain available from history until final review.
+- Allow members to revise pending Shift 1/two-hour submissions, Downtime reports, and
+  submitted Work Order results; stale admin actions are rejected by revision guard.
+- Deploy Worker API `2026.20` and operations contract `2026.18.0` without a D1 schema
+  migration. Target OTA policy is minimum `0.19.3` with `force_update=true`.
+
+### Verified
+
+- APK version code `55`, 13,467,495 bytes, SHA-256
+  `8d9ee9eb52550f418967444a5940661352c8ded8cad35befaa29e900e14e8199`, one signer,
+  and APK Signature Scheme v2 verification passed.
+- Python `193/193`, Worker `96/96`, Android unit `85/85`, contract roundtrip, lint
+  vital, and signed release build passed. Broad UI and physical-device testing were
+  not run.
+- Controlled staging acceptance verified package revision/import/PDF and a visible
+  background FCM notification for `anggota`, `admin`, and `super_admin`; exact cleanup
+  and foreign-key checks passed. Production received no trial data.
+- The production backup restored with 43 tables, 54 indexes, 36 triggers, integrity
+  `ok`, and clean foreign keys. Worker `c9a45f00-2e2c-4ae8-bf8d-fb26f718eef8` and
+  exactly one operations contract `2026.18.0` are active.
+
 ## 0.19.3 - 2026-08-07
 
 ### Added
