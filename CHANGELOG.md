@@ -22,9 +22,10 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 - Python `193/193`, Worker `96/96`, Android unit `85/85`, contract roundtrip, lint
   vital, and signed release build passed. Broad UI and physical-device testing were
   not run.
-- Controlled staging acceptance verified package revision/import/PDF and a visible
-  background FCM notification for `anggota`, `admin`, and `super_admin`; exact cleanup
-  and foreign-key checks passed. Production received no trial data.
+- Controlled staging acceptance verified package revision/import/PDF, FID registration
+  for `anggota`, `admin`, and `super_admin`, and one visible diagnostic notification
+  while the APK was background; exact cleanup and foreign-key checks passed.
+  Production received no trial data.
 - The production backup restored with 43 tables, 54 indexes, 36 triggers, integrity
   `ok`, and clean foreign keys. Worker `c9a45f00-2e2c-4ae8-bf8d-fb26f718eef8` and
   exactly one operations contract `2026.18.0` are active.

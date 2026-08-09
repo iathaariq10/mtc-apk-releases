@@ -24,8 +24,9 @@ contract `2026.18.0` are deployed; no D1 schema migration was required.
 
 The signed artifact passed Python `193/193`, Worker `96/96`, Android unit `85/85`,
 lint vital, signature verification, and release build. Controlled staging acceptance
-verified revision/import/PDF plus a visible background FCM notification for `anggota`,
-`admin`, and `super_admin`, then cleaned every trial marker. The production backup
+verified revision/import/PDF, FID registration for `anggota`, `admin`, and
+`super_admin`, plus one visible diagnostic notification while the APK was background,
+then cleaned every trial marker. The production backup
 restored with 43 tables, 54 indexes, 36 triggers, integrity `ok`, and clean foreign
 keys. Physical-device and broad UI testing were not run. The live manifest is
 active at `0.20.0`, minimum `0.19.3`, API `2026.20`, and `force_update=true`.
