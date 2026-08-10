@@ -2,6 +2,38 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.21.0 - 2026-08-11
+
+### Added
+
+- Add additive access roles, capabilities, workspace selection, and a dedicated
+  Warehouse workspace while retaining the legacy Maintenance role projection.
+- Add server-owned spare-part master data, aliases/barcodes, per-location balances,
+  requests, reservations, immutable documents/movements, and Stock Count sessions.
+- Add APK Warehouse home, request, scan/search, stock, online transaction, and
+  resilient Stock Count flows with capability-gated actions.
+
+### Changed
+
+- Deploy Worker API `2026.21`, the guarded access/inventory D1 migration, and staged
+  access/warehouse feature activation. Keep inventory online-only and fail closed.
+- Target OTA minimum `0.19.3` with `force_update=true` for APK `0.21.0` code `56`.
+
+### Verified
+
+- Candidate APK is 13,812,896 bytes with SHA-256
+  `9f83835dbc9e53f5bcb6130cf96c8feb21d3ac15288a74a650bc2da8ce72a172`, one signer,
+  and APK Signature Scheme v2 verification.
+- Worker `103/103`, Python `200/200`, migration `4/4`, Android unit `87/87`,
+  responsive emulator `6/6`, Stock Count resilience `4/4`, Activity recreation
+  `1/1`, real QR decode `1/1`, lint, build, install, and cold launch passed.
+- Staging acceptance passed access isolation, inventory lifecycle, append-only
+  guards, idempotency, freeze, and Stock Count with exact cleanup. Production was
+  migrated after a verified backup/recovery drill and received read-only smoke only.
+- Production account isolation, one warehouse, three locations, 25 inventory
+  triggers, zero inventory business rows, and clean foreign keys were verified.
+  No physical device was used.
+
 ## 0.20.0 - 2026-08-09
 
 ### Changed

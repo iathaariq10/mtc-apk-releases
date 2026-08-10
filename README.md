@@ -4,6 +4,35 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
+- Version: `0.21.0`
+- Version code: `56`
+- APK: [`releases/v0.21.0/app-release.apk`](releases/v0.21.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.21.0/app-release.apk`
+- SHA-256: `9f83835dbc9e53f5bcb6130cf96c8feb21d3ac15288a74a650bc2da8ce72a172`
+- OTA rollout target: minimum `0.19.3`, `force_update=true`.
+
+Release `0.21.0` adds additive access profiles and a dedicated Warehouse workspace
+without changing the legacy Maintenance role projection. Warehouse users can manage
+requests, scan/search parts, view stock, post capability-gated online transactions,
+and complete resilient Stock Count sessions. Inventory balances remain server-owned;
+the APK has no offline inventory outbox.
+
+Worker API `2026.21`, the guarded D1 access/inventory schema, access control, and the
+Warehouse flag are active in production. The controlled production account uses the
+least-privilege `warehouse_admin` role; read-only verification reached one warehouse
+and three seeded locations while Maintenance access remained denied. Staging acceptance
+covered role isolation, transaction lifecycle, append-only movement guards, freeze,
+idempotency, and Stock Count, then removed all trial business rows.
+
+The signed artifact passed Worker `103/103`, Python `200/200`, migration `4/4`,
+Android unit `87/87`, responsive emulator `6/6`, Stock Count resilience `4/4`,
+Activity recreation `1/1`, real QR decode `1/1`, lint, signature verification,
+install, and release cold launch on the drive-D-backed `MTC_API35` emulator. No
+physical device was used. Public-byte and live-manifest verification follows after
+this immutable candidate artifact is published.
+
+## Previous Release 0.20.0
+
 - Version: `0.20.0`
 - Version code: `55`
 - APK: [`releases/v0.20.0/app-release.apk`](releases/v0.20.0/app-release.apk)
