@@ -28,8 +28,14 @@ The signed artifact passed Worker `103/103`, Python `200/200`, migration `4/4`,
 Android unit `87/87`, responsive emulator `6/6`, Stock Count resilience `4/4`,
 Activity recreation `1/1`, real QR decode `1/1`, lint, signature verification,
 install, and release cold launch on the drive-D-backed `MTC_API35` emulator. No
-physical device was used. Public-byte and live-manifest verification follows after
-this immutable candidate artifact is published.
+physical device was used. The public download, live manifest, and local artifact
+match at 13,812,896 bytes and SHA-256
+`9f83835dbc9e53f5bcb6130cf96c8feb21d3ac15288a74a650bc2da8ce72a172`.
+The manifest exposes `0.21.0`, minimum `0.19.3`, API `2026.21`, and
+`force_update=true`; clients `0.19.2`, `0.19.3`, and `0.20.0` receive HTTP 426,
+while `0.21.0` reaches the normal authentication boundary. The downloaded APK
+installed and cold-launched in 1,978 ms on `MTC_API35`; its process remained alive
+and the crash buffer was clean.
 
 ## Previous Release 0.20.0
 
@@ -57,8 +63,9 @@ verified revision/import/PDF, FID registration for `anggota`, `admin`, and
 `super_admin`, plus one visible diagnostic notification while the APK was background,
 then cleaned every trial marker. The production backup
 restored with 43 tables, 54 indexes, 36 triggers, integrity `ok`, and clean foreign
-keys. Physical-device and broad UI testing were not run. The live manifest is
-active at `0.20.0`, minimum `0.19.3`, API `2026.20`, and `force_update=true`.
+keys. Physical-device and broad UI testing were not run. Its final manifest state
+before `0.21.0` activation used minimum `0.19.3`, API `2026.20`, and
+`force_update=true`.
 The public download and manifest match the local signed artifact byte-for-byte;
 `0.19.2` is below minimum, `0.19.3` is blocked by forced update, and `0.20.0`
 reaches the normal authentication boundary. The downloaded APK installed and

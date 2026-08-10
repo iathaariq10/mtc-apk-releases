@@ -21,7 +21,7 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 
 ### Verified
 
-- Candidate APK is 13,812,896 bytes with SHA-256
+- APK is 13,812,896 bytes with SHA-256
   `9f83835dbc9e53f5bcb6130cf96c8feb21d3ac15288a74a650bc2da8ce72a172`, one signer,
   and APK Signature Scheme v2 verification.
 - Worker `103/103`, Python `200/200`, migration `4/4`, Android unit `87/87`,
@@ -33,6 +33,14 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 - Production account isolation, one warehouse, three locations, 25 inventory
   triggers, zero inventory business rows, and clean foreign keys were verified.
   No physical device was used.
+- The public URL, live manifest, and local APK match at 13,812,896 bytes and SHA-256
+  `9f83835dbc9e53f5bcb6130cf96c8feb21d3ac15288a74a650bc2da8ce72a172`.
+  Exactly one manifest is active at `0.21.0`, minimum `0.19.3`, API `2026.21`, and
+  `force_update=true`; `0.19.2`, `0.19.3`, and `0.20.0` receive HTTP 426, while
+  `0.21.0` reaches the normal authentication boundary.
+- The downloaded public APK installed and cold-launched on the drive-D-backed
+  `MTC_API35` emulator in 1,978 ms. Its process remained alive, the login screen was
+  visible, and the crash buffer was clean.
 
 ## 0.20.0 - 2026-08-09
 
