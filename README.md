@@ -31,6 +31,14 @@ build, signature verification, install, and cold launch on the drive-D-backed
 recovery/rollback, and controlled staging inventory/photo acceptance also passed.
 No physical device was used.
 
+The public download, local signed artifact, and live manifest match at 14,182,465 bytes
+and SHA-256 `e81f243cc6382dc557207abab69eac739466f65bdbc9bfe995a5a132d4ece066`.
+The manifest exposes `0.22.0`, minimum `0.19.3`, API `2026.22`, form `2026.08.4`, and
+`force_update=true`. Clients `0.19.2`, `0.19.3`, `0.20.0`, and `0.21.0` receive HTTP
+426 on business routes, while `0.22.0` reaches the normal authentication boundary.
+The downloaded public APK installed and cold-launched in 4,876 ms on `MTC_API35`; its
+process remained alive and the crash buffer was clean.
+
 ## Previous Release 0.21.0
 
 - Version: `0.21.0`

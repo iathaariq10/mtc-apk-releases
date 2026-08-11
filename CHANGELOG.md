@@ -42,6 +42,14 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 - Production has one active Warehouse account, no Supervisor account, clean foreign
   keys, and a verified `adminsprt` login with Warehouse-only access. No physical
   device was used and no mutating production inventory acceptance was run.
+- The public URL, live manifest, and local APK match at 14,182,465 bytes and SHA-256
+  `e81f243cc6382dc557207abab69eac739466f65bdbc9bfe995a5a132d4ece066`.
+  Exactly one manifest is active at `0.22.0`, minimum `0.19.3`, API `2026.22`, form
+  `2026.08.4`, and `force_update=true`; clients `0.19.2` through `0.21.0` receive HTTP
+  426, while `0.22.0` reaches the normal authentication boundary.
+- The downloaded public APK installed and cold-launched on the drive-D-backed
+  `MTC_API35` emulator in 4,876 ms. Its process remained alive and the crash buffer
+  was clean.
 
 ## 0.21.0 - 2026-08-11
 
