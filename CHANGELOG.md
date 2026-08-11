@@ -2,6 +2,47 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.22.0 - 2026-08-12
+
+### Added
+
+- Add one authenticated private photo per sparepart, with JPEG/PNG/WebP validation,
+  a 3 MiB limit, stable R2 identity, revisioned metadata, and upload/delete controls
+  in both APK and EXE.
+- Add full master-part and stock-management access for the sole operational
+  `Admin Gudang Sparepart` role on both clients.
+- Add a daily WITA Warehouse digest for the Admin Gudang and report/reminder-only TL.
+
+### Changed
+
+- Make `warehouse_admin` the only active Warehouse operator role, deactivate the
+  legacy `warehouse_supervisor` role, and restrict Maintenance `super_admin` to
+  Warehouse view/report access while retaining all existing Maintenance authority.
+- Deploy Worker API `2026.22` and the guarded D1 role/photo migration. Replace the
+  production `adminsprt` identity audit-safely with a fresh least-privilege account.
+- Target OTA minimum `0.19.3` with `force_update=true` for APK `0.22.0` code `57`.
+
+### Removed
+
+- Remove barcode scanning, camera scanner metadata/dependency, and the barcode-first
+  APK flow. Spareparts are identified by photo and code/name search.
+
+### Verified
+
+- APK is 14,182,465 bytes with SHA-256
+  `e81f243cc6382dc557207abab69eac739466f65bdbc9bfe995a5a132d4ece066`, one signer,
+  and APK Signature Scheme v2 verification.
+- Worker `105/105`, Python `202/202`, migration `6/6`, Android unit `87/87`, responsive
+  emulator `5/5` with 17 screenshots, Stock Count resilience `4/4`, Activity
+  recreation `1/1`, lint, signed build, install, and cold launch passed.
+- Production/staging backups restored with 62 target tables, 69 indexes, 65 triggers,
+  integrity `ok`, clean foreign keys, and rollback to the 61-table baseline. Staging
+  access and inventory acceptance passed with 6 documents, 7 movements, 3 Stock
+  Count sessions, private R2 photo coverage, append-only guards, and exact cleanup.
+- Production has one active Warehouse account, no Supervisor account, clean foreign
+  keys, and a verified `adminsprt` login with Warehouse-only access. No physical
+  device was used and no mutating production inventory acceptance was run.
+
 ## 0.21.0 - 2026-08-11
 
 ### Added

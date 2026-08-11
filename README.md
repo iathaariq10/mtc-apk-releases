@@ -4,6 +4,35 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
+- Version: `0.22.0`
+- Version code: `57`
+- APK: [`releases/v0.22.0/app-release.apk`](releases/v0.22.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.22.0/app-release.apk`
+- SHA-256: `e81f243cc6382dc557207abab69eac739466f65bdbc9bfe995a5a132d4ece066`
+- OTA rollout target: minimum `0.19.3`, `force_update=true`.
+
+Release `0.22.0` simplifies the Warehouse organization to one operational role,
+`Admin Gudang Sparepart`. That role can manage master parts, private part photos,
+requests, receipts, issues, returns, transfers, adjustments, reports, and Stock Count
+from both APK and EXE. The existing Maintenance superadmin/TL remains unchanged for
+Maintenance and receives only Warehouse read/report access plus reminders; the legacy
+Warehouse Supervisor role is inactive and has no account.
+
+Barcode scanning and barcode master data were removed from the APK workflow. Parts
+are now found by code/name and represented by one authenticated JPEG, PNG, or WebP
+photo stored privately in R2. Worker API `2026.22` and the guarded photo/role D1
+migration are active in production. The production `adminsprt` account was replaced
+audit-safely and verified with exactly the Warehouse workspace and 11 capabilities.
+
+The signed artifact passed Android unit `87/87`, responsive emulator `5/5` across 17
+screenshots, Stock Count resilience `4/4`, Activity recreation `1/1`, lint, release
+build, signature verification, install, and cold launch on the drive-D-backed
+`MTC_API35` emulator. Worker `105/105`, Python `202/202`, migration `6/6`, backup
+recovery/rollback, and controlled staging inventory/photo acceptance also passed.
+No physical device was used.
+
+## Previous Release 0.21.0
+
 - Version: `0.21.0`
 - Version code: `56`
 - APK: [`releases/v0.21.0/app-release.apk`](releases/v0.21.0/app-release.apk)
