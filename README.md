@@ -31,6 +31,13 @@ install, and cold launch on the drive-D-backed `MTC_API35` emulator. Worker `109
 Python `206/206`, backup recovery/rollback, and controlled staging access/inventory
 acceptance passed. No physical device was used.
 
+The public download, local signed artifact, and live manifest match at 14,248,001
+bytes and SHA-256
+`927578d8f1781eca186a7451026d1e39ab11e949b872f8368263a6414cb5c6e2`.
+The manifest exposes `0.24.0`, minimum `0.19.3`, API `2026.24`, form `2026.08.4`,
+and `force_update=true`. The public APK installed and cold-launched in 2,842 ms on
+`MTC_API35`; its process remained alive and the crash buffer was empty.
+
 ## Previous Release 0.22.0
 
 - Version: `0.22.0`

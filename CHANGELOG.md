@@ -45,6 +45,14 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
   documents, 7 movements, 3 Stock Count sessions, returnable/other-machine
   classification, WITA-dated monthly reporting, private photo coverage, and exact
   cleanup.
+- Production Worker version `b2b33e2b-8c3e-4a64-8760-e1e8137ca521`, one active
+  manifest, 31 inventory triggers, the existing sole `adminsprt` Warehouse
+  assignment, report-only TL capabilities, zero inventory documents/movements, and
+  clean foreign keys were verified read-only after deployment.
+- The public URL, live manifest, and local APK match at 14,248,001 bytes and SHA-256
+  `927578d8f1781eca186a7451026d1e39ab11e949b872f8368263a6414cb5c6e2`.
+  The public APK installed and cold-launched on `MTC_API35` in 2,842 ms; its process
+  remained alive and the crash buffer was empty.
 
 ## 0.22.0 - 2026-08-12
 
