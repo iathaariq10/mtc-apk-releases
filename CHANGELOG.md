@@ -2,6 +2,50 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.24.0 - 2026-08-23
+
+### Added
+
+- Add a simple Warehouse verification queue for spareparts recorded on final
+  Downtime and Work Order data, including idempotent verify/reject and one-time
+  return handling for reusable items.
+- Add consumable/returnable classification, master-machine/other-machine/general
+  application categories, and dated monthly Warehouse reports for Excel and PDF.
+- Add direct previous-shift entry points for Downtime and Work Order history.
+
+### Changed
+
+- Simplify the Warehouse APK and EXE navigation around `Beranda`, `Stok`, and
+  `Verifikasi`, while keeping stock mutation online and server-authoritative.
+- Deploy Worker API `2026.24` and the guarded `20260815_simple_warehouse` D1
+  migration. Keep the existing `adminsprt` account and report-only Warehouse access
+  for the Maintenance TL.
+- Target OTA minimum `0.19.3` with `force_update=true` for APK `0.24.0` code `59`.
+
+### Fixed
+
+- Use the current Asia/Makassar date when Shift 1 opens, preserve server shift dates
+  for Shift 2/3, and keep historical pending data revisable until final admin review.
+- Make checked-PDF Downtime/Work Order appendices use the same daily all-shift scope
+  as standalone exports for Shift 1, Shift 2, and Shift 3.
+- Derive automatic inventory and Stock Count movement dates from Asia/Makassar at
+  the UTC date boundary.
+
+### Verified
+
+- APK is 14,248,001 bytes with SHA-256
+  `927578d8f1781eca186a7451026d1e39ab11e949b872f8368263a6414cb5c6e2`, one signer,
+  and APK Signature Scheme v2 verification.
+- Android unit `91/91`, Worker `109/109`, Python `206/206`, lint/release build,
+  emulator previous-shift UI, install, and cold launch passed. No physical device
+  was used.
+- Staging and production backups restored with the target 63-table schema, 72
+  indexes, 67 triggers, clean foreign keys, and guarded rollback to the exact
+  baseline. Staging access and enhanced inventory acceptance passed with 6
+  documents, 7 movements, 3 Stock Count sessions, returnable/other-machine
+  classification, WITA-dated monthly reporting, private photo coverage, and exact
+  cleanup.
+
 ## 0.22.0 - 2026-08-12
 
 ### Added
