@@ -2,6 +2,50 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.25.0 - 2026-08-23
+
+### Added
+
+- Give the sole `Admin Gudang Sparepart` complete master-part and stock controls in
+  both APK and EXE, including create/edit/rename, archive/reactivate, photo,
+  receipt, issue, return, adjustment, verification, Stock Count, and reporting.
+- Add explicit one-location guards so all new balances, movements, reservations,
+  and Stock Count sessions use `Gudang Sparepart`.
+
+### Changed
+
+- Remove receiving, quarantine, rack-transfer, and barcode concepts from the daily
+  Warehouse UI while preserving historical location rows as inactive records.
+- Keep the Maintenance TL limited to Warehouse viewing, reports, and reminders;
+  operational stock authority remains with `warehouse_admin` only.
+- Deploy Worker API `2026.25` and target OTA minimum `0.19.3` with
+  `force_update=true` for APK `0.25.0` code `60`.
+
+### Fixed
+
+- Restore exact staging cleanup after role-switch and inventory acceptance runs,
+  including role assignments and all one-location/delete guards.
+- Keep safe transport retries limited to read/login/logout requests so stock writes
+  cannot be replayed accidentally after an uncertain network response.
+
+### Verified
+
+- APK is 14,264,385 bytes with SHA-256
+  `6dbd0be7da2276641ffd4ca30fb8990a53577afb465a2b832da71ff8699fb517`, one signer,
+  and APK Signature Scheme v2 verification.
+- Android unit `91/91`, responsive instrumentation `7/7`, Stock Count/recreation
+  instrumentation `5/5`, Worker `110/110`, Python `207/207`, release/lint, desktop
+  interaction, 22 desktop captures, and signed cold launch passed on the
+  drive-D-backed `MTC_API35` AVD. No physical device was used.
+- Staging access, inventory, private photo, dated monthly reporting, append-only
+  ledger, and full Worker-APK-EXE acceptance passed with exact cleanup and FK zero.
+- Production backup SHA-256
+  `a0413b2fa9dfeb1d9003b9ac92a7aab706ebbe12d05fa3a8fe01808fa61f46ae` restored,
+  migrated to 63 tables/72 indexes/72 triggers, and rolled back to the exact
+  baseline. Production Worker version is
+  `b3afe484-f19b-4c4c-a51a-143a081f9bfb`; only `location-main` is active and the two
+  existing part masters remain unchanged.
+
 ## 0.24.0 - 2026-08-23
 
 ### Added

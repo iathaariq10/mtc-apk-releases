@@ -4,6 +4,44 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
+- Version: `0.25.0`
+- Version code: `60`
+- APK: [`releases/v0.25.0/app-release.apk`](releases/v0.25.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.25.0/app-release.apk`
+- SHA-256: `6dbd0be7da2276641ffd4ca30fb8990a53577afb465a2b832da71ff8699fb517`
+- OTA rollout target: minimum `0.19.3`, `force_update=true`.
+
+Release `0.25.0` completes the simple one-location Warehouse model for the sole
+operational `Admin Gudang Sparepart`. The APK and EXE now expose the same practical
+authority: create/edit/rename, archive/reactivate, and photograph master parts;
+record receipts, issues, returns, and adjustments; verify final Downtime/Work Order
+usage; perform Stock Count; and export dated monthly Excel/PDF reports. Receiving,
+quarantine, rack-transfer, and barcode workflows are no longer part of daily UI.
+
+Maintenance members can reopen previous-shift Downtime and Work Order screens and
+continue revising checksheet, Downtime, or Work Order data until an admin finalizes
+it. Shift 1 starts on the current Asia/Makassar date, while Shift 2/3 keep the
+server-owned shift date. Checked PDFs use the same daily, all-shift operation scope
+as standalone Downtime and Work Order exports. Parts remain classifiable for a
+master machine, another utility such as a chiller/compressor, or general use, and as
+consumable or returnable.
+
+Worker API `2026.25` and the guarded single-location migration are active in
+production. The existing `adminsprt` account remains the only active Warehouse
+operator; the Maintenance TL remains report/reminder-only for Warehouse operations.
+Production keeps historical receiving/quarantine location rows inactive while only
+`Gudang Sparepart` can hold new stock or workflows.
+
+The signed artifact is 14,264,385 bytes with SHA-256
+`6dbd0be7da2276641ffd4ca30fb8990a53577afb465a2b832da71ff8699fb517`.
+Android unit `91/91`, responsive instrumentation `7/7`, Stock Count/recreation
+instrumentation `5/5`, Worker `110/110`, Python `207/207`, lint/release/signature,
+desktop interactions and 22 visual captures, D1 recovery/rollback, controlled
+staging access/inventory, and full Worker-APK-EXE acceptance passed. All Android
+verification used the drive-D-backed `MTC_API35` AVD; no physical device was used.
+
+## Previous Release 0.24.0
+
 - Version: `0.24.0`
 - Version code: `59`
 - APK: [`releases/v0.24.0/app-release.apk`](releases/v0.24.0/app-release.apk)
@@ -11,32 +49,11 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 - SHA-256: `927578d8f1781eca186a7451026d1e39ab11e949b872f8368263a6414cb5c6e2`
 - OTA rollout target: minimum `0.19.3`, `force_update=true`.
 
-Release `0.24.0` presents a simpler Warehouse flow for the sole operational
-`Admin Gudang Sparepart`: master parts and stock, physical verification of final
-Downtime/Work Order usage, returnable items, and dated monthly Excel/PDF reports.
-Parts can be classified for a master machine, another utility such as a chiller or
-compressor, or general use. Every stock movement has a visible operating date.
-
-Maintenance members can reopen previous-shift Downtime and Work Order screens and
-continue revising checksheet, Downtime, or Work Order data until an admin finalizes
-it. Shift 1 starts on the current Asia/Makassar date, while Shift 2/3 keep the
-server-owned shift date. Checked PDFs use the same daily, all-shift operation scope
-as standalone Downtime and Work Order exports.
-
-Worker API `2026.24` and the guarded simple-Warehouse migration are active in
-production. The existing `adminsprt` account remains the only active Warehouse
-operator; the Maintenance TL remains report/reminder-only for Warehouse operations.
-The signed artifact passed Android unit `91/91`, lint/release build, signature v2,
-install, and cold launch on the drive-D-backed `MTC_API35` emulator. Worker `109/109`,
-Python `206/206`, backup recovery/rollback, and controlled staging access/inventory
-acceptance passed. No physical device was used.
-
-The public download, local signed artifact, and live manifest match at 14,248,001
-bytes and SHA-256
-`927578d8f1781eca186a7451026d1e39ab11e949b872f8368263a6414cb5c6e2`.
-The manifest exposes `0.24.0`, minimum `0.19.3`, API `2026.24`, form `2026.08.4`,
-and `force_update=true`. The public APK installed and cold-launched in 2,842 ms on
-`MTC_API35`; its process remained alive and the crash buffer was empty.
+Release `0.24.0` introduced the simple Warehouse verification queue, dated monthly
+Excel/PDF reporting, consumable/returnable and machine application categories,
+previous-shift Downtime/Work Order entry points, current-WITA Shift 1 dates, and
+consistent daily Downtime/Work Order appendices in checked PDFs. Worker API
+`2026.24` and APK code `59` remain preserved as the previous rollback artifact.
 
 ## Previous Release 0.22.0
 
