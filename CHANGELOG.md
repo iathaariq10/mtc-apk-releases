@@ -2,6 +2,36 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.26.0 - 2026-09-01
+
+### Added
+
+- Add one derived Shift closeout status for Checksheet, Downtime, Work Order, and
+  explicit sparepart-use decisions, including a direct action to the first incomplete
+  section.
+- Add server-side approval guards for Shift 1 and two-hour submissions while keeping
+  explicit no-Downtime and zero-Work-Order shifts valid.
+
+### Changed
+
+- Save the member draft before closeout preflight and fail closed on an unavailable
+  preflight instead of queuing an incomplete checksheet package.
+- Use Worker API `2026.26`; keep D1 schema, Warehouse roles, single-location inventory,
+  and minimum APK `0.19.3` unchanged.
+
+### Verified
+
+- APK is 14,264,385 bytes with SHA-256
+  `b5af2ed7bed61b2008b69f5a417986c63a9c4459ee9e6fd6c304f871446bf91a`, one signer,
+  and APK Signature Scheme v2 verification.
+- Android unit `92/92`, focused operations/responsive instrumentation `10/10`, Worker
+  `116/116`, lint/release build, install, and cold launch passed on the drive-D-backed
+  `MTC_API35` AVD. No physical device was used.
+- Staging acceptance reached closeout `3/3`, preserved Warehouse stock, deleted the
+  private R2 object, removed all trial rows, and left foreign keys clean. Production
+  backup restored with 63 tables, 72 indexes, 72 triggers, integrity `ok`, and clean
+  foreign keys before Worker deployment.
+
 ## 0.25.0 - 2026-08-23
 
 ### Added
