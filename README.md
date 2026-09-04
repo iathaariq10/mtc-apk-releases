@@ -4,6 +4,20 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
+- Version: `0.28.0`
+- Version code: `63`
+- APK: [`releases/v0.28.0/app-release.apk`](releases/v0.28.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.28.0/app-release.apk`
+- SHA-256: `5bfd5b264fb1c20db5017a84e13c827062d9d1266ef29a7b321818ba2ca2bf64`
+- OTA rollout target: minimum `0.19.3`, `force_update=true`.
+
+Release `0.28.0` carries the final desktop/Android contract for the simple one-location
+Warehouse: dated opening stock, safe master deletion, DT/WO evidence verification,
+monthly sparepart reports, and automatic photo compression to at most 250 KB. Worker
+API `2026.28` is the matching server contract. The artifact is 14,280,769 bytes,
+signed with the single PGA Maintenance v2 signer. Emulator verification uses the
+drive-D-backed `MTC_API35` AVD; no physical device is used.
+
 - Version: `0.27.0`
 - Version code: `62`
 - APK: [`releases/v0.27.0/app-release.apk`](releases/v0.27.0/app-release.apk)

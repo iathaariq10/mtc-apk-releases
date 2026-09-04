@@ -2,6 +2,23 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.28.0 - 2026-09-05
+
+### Changed
+
+- Publish the APK release that matches Worker API `2026.28` and desktop .NET `1.7.0`.
+- Keep the one-location Gudang Sparepart flow simple while exposing dated opening
+  stock, safe master deletion, DT/WO verification, and monthly PDF/Excel reports.
+- Preserve automatic sparepart/WO photo compression at the 250 KB server boundary.
+
+### Verified
+
+- Artifact: 14,280,769 bytes; SHA-256
+  `5bfd5b264fb1c20db5017a84e13c827062d9d1266ef29a7b321818ba2ca2bf64`.
+- APK Signature Scheme v2 verifies with one signer (CN `MTC CBG`, PT Primagelora
+  Agunglestari); 36 instrumentation tests passed with 3 FCM tests skipped by
+  environment on AVD `MTC_API35` drive D.
+
 ## 0.27.0 - 2026-09-04
 
 ### Added
