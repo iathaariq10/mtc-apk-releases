@@ -4,12 +4,33 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
-- Version: `0.26.0`
-- Version code: `61`
-- APK: [`releases/v0.26.0/app-release.apk`](releases/v0.26.0/app-release.apk)
-- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.26.0/app-release.apk`
-- SHA-256: `b5af2ed7bed61b2008b69f5a417986c63a9c4459ee9e6fd6c304f871446bf91a`
+- Version: `0.27.0`
+- Version code: `62`
+- APK: [`releases/v0.27.0/app-release.apk`](releases/v0.27.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.27.0/app-release.apk`
+- SHA-256: `317b8e0b253e76114184a14d9c45ce63124c27fe543a6779ff901d15ed38b135`
 - OTA rollout target: minimum `0.19.3`, `force_update=true`.
+
+Release `0.27.0` completes the simple Warehouse workflow and the shared Maintenance
+closeout flow. The sole Admin Gudang can create, rename, edit, archive/reactivate,
+photograph, and count spareparts from the APK, while Maintenance superadmins retain
+read/report access. DT/WO usage now exposes the written part name, quantity, unit,
+machine, member, and work title before physical Warehouse verification changes stock.
+
+Every sparepart or Work Order photo selected in the APK is automatically decoded,
+resized, flattened, and JPEG-compressed by the app to at most 250 KB. The compressed
+copy is kept in the retry queue, so background retries never upload the original large
+file. Worker API `2026.27` enforces the same 256,000-byte boundary.
+
+The signed artifact is 14,264,385 bytes with SHA-256
+`317b8e0b253e76114184a14d9c45ce63124c27fe543a6779ff901d15ed38b135` and one v2
+signer. Worker `117/117`, desktop `27/27`, Android unit/build/lint, and 36 emulator
+instrumentation tests passed. Controlled staging acceptance covered access, inventory,
+private photos, dated reports, DT/WO parts, closeout `3/3`, R2 media, PC import/PDF,
+visible background FCM, exact cleanup, and clean foreign keys. All Android verification
+used the drive-D-backed `MTC_API35` AVD; no physical device was used.
+
+## Previous Release 0.26.0
 
 Release `0.26.0` unifies Shift checksheet, Downtime, Work Order, and sparepart usage
 into one server-authoritative closeout. A member's draft is saved first; when a

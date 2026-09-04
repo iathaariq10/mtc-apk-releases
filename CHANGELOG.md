@@ -2,6 +2,40 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.27.0 - 2026-09-04
+
+### Added
+
+- Add full APK master-part controls for the sole Admin Gudang and clear DT/WO
+  sparepart evidence before physical verification posts stock.
+- Add automatic photo processing for master spareparts and Work Order evidence. The
+  APK stages the compressed JPEG for reliable background retry.
+
+### Changed
+
+- Raise the selected cloud-photo target from the initial 100 KB design to a practical
+  maximum of 250 KB, enforced consistently by APK and Worker API `2026.27`.
+- Keep Maintenance superadmin/TL Warehouse access read/report-only while preserving
+  complete Maintenance authority.
+
+### Fixed
+
+- Align closeout, history/PDF, reports, categorization controls, stock arithmetic,
+  and DT/WO inventory evidence across APK, EXE, and Worker.
+- Keep irrelevant machine-category inputs disabled and omit internal source reference
+  identifiers from the normal Warehouse usage UI.
+
+### Verified
+
+- APK is 14,264,385 bytes with SHA-256
+  `317b8e0b253e76114184a14d9c45ce63124c27fe543a6779ff901d15ed38b135`, one signer,
+  and APK Signature Scheme v2 verification.
+- Worker `117/117`, desktop `27/27`, Android unit/build/lint, and 36 instrumentation
+  tests passed on the drive-D-backed `MTC_API35` AVD; no physical device was used.
+- Production/staging backups restored with 63 tables, 72 indexes, 72 triggers,
+  integrity `ok`, and zero foreign-key violations. Staging access, inventory,
+  operations, closeout, R2, PC/PDF, background FCM, and exact cleanup passed.
+
 ## 0.26.0 - 2026-09-01
 
 ### Added
