@@ -4,6 +4,29 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
+- Version: `0.29.0`
+- Version code: `64`
+- APK: [`releases/v0.29.0/app-release.apk`](releases/v0.29.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.29.0/app-release.apk`
+- SHA-256: `04ffa92dc80541efcff91a255240a5ea808c80493a0a98d6f53bcb27f4f91053`
+- OTA rollout target: minimum `0.19.3`, `force_update=true`.
+
+Release `0.29.0` separates Maintenance and Warehouse notifications end to end, so
+each workspace has its own list, badge, navigation target, and clear action. It also
+keeps checksheet submission available while work is being completed, then requires
+the server-accepted checksheet and Downtime report for the same date, member, and
+machine before the member can export or share the PDF. `Pending Review` is sufficient;
+the export gate does not require superadmin approval.
+
+Worker API `2026.29` is the matching server contract. The artifact is 14,280,769
+bytes, signed with one PGA Maintenance v2 signer, and passed 96 Android unit tests,
+release/lint, cold launch, and 30 of 33 instrumentation tests on `MTC_API35`; the
+remaining three were expected environment skips. Controlled staging acceptance
+verified two five-form packages, revision, review, closeout `3/3`, PC import/PDF,
+visible background FCM, and exact cleanup with zero foreign-key violations.
+
+## Previous Release 0.28.0
+
 - Version: `0.28.0`
 - Version code: `63`
 - APK: [`releases/v0.28.0/app-release.apk`](releases/v0.28.0/app-release.apk)

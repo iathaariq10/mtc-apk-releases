@@ -2,6 +2,27 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.29.0 - 2026-09-13
+
+### Changed
+
+- Separate Maintenance and Warehouse notification lists, badges, navigation targets,
+  clear actions, and FCM workspace metadata through Worker API `2026.29`.
+- Require a server-accepted checksheet and Downtime report for the same date, member,
+  and machine before PDF export/share. `Pending Review` remains sufficient and does
+  not require superadmin approval.
+
+### Verified
+
+- Artifact: 14,280,769 bytes; SHA-256
+  `04ffa92dc80541efcff91a255240a5ea808c80493a0a98d6f53bcb27f4f91053`.
+- APK Signature Scheme v2 verifies with one signer (CN `MTC CBG`, PT Primagelora
+  Agunglestari); Android unit `96/96`, release/lint, and cold launch passed.
+- AVD `MTC_API35` ran 33 instrumentation tests: 30 passed, three expected environment
+  skips, and zero failures. Controlled staging acceptance verified package revision,
+  batch review, closeout `3/3`, PC import/PDF, visible background FCM, exact cleanup,
+  and zero foreign-key violations.
+
 ## 0.28.0 - 2026-09-05
 
 ### Changed
