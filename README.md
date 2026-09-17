@@ -4,12 +4,41 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
+- Version: `0.30.0`
+- Version code: `65`
+- APK: [`releases/v0.30.0/app-release.apk`](releases/v0.30.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.30.0/app-release.apk`
+- SHA-256: `7ad7c562ae7397fdcd8abce0051204ce25b07db78f3f851a9cba6ec5d3cc379b`
+- OTA rollout target: minimum `0.19.3`, `force_update=true`.
+
+Release `0.30.0` adds the mandatory material register for every member/date/shift,
+including an explicit confirmed declaration when no sparepart or tool was used. A
+material declaration with lines waits for Warehouse Admin verification and does not
+change stock implicitly. The four-step shift closeout now covers Checksheet,
+Downtime, Work Order, and this material register.
+
+Warehouse screens separate consumable spareparts from returnable tools. Returnable
+assets carry an admin-defined asset code, shift custody, intershift handover, return
+and inspection, age/cycle/hour tracking, condition, replacement recommendation, and
+versioned specifications. Receipt uses incoming quantity; Adjustment uses the final
+physical stock target and accepts zero when no active reservation exists.
+
+Worker API `2026.30` is the matching server contract. The artifact is 14,379,069
+bytes, signed with one PGA Maintenance v2 signer, and passed 100 Android unit tests,
+release/lint/signature checks, plus 35 passed and three expected skipped full
+instrumentation tests on `MTC_API35`. Controlled staging acceptance verified asset
+lifecycle, closeout `4/4`, two five-form packages, PC import/PDF, visible background
+FCM, private R2, exact cleanup, all 21 inventory tables empty, 53 inventory triggers,
+and zero foreign-key violations.
+
+## Previous Release 0.29.0
+
 - Version: `0.29.0`
 - Version code: `64`
 - APK: [`releases/v0.29.0/app-release.apk`](releases/v0.29.0/app-release.apk)
 - Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.29.0/app-release.apk`
 - SHA-256: `04ffa92dc80541efcff91a255240a5ea808c80493a0a98d6f53bcb27f4f91053`
-- OTA rollout target: minimum `0.19.3`, `force_update=true`.
+- Final OTA rollout target: minimum `0.19.3`, `force_update=true`.
 
 Release `0.29.0` separates Maintenance and Warehouse notifications end to end, so
 each workspace has its own list, badge, navigation target, and clear action. It also

@@ -2,6 +2,38 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.30.0 - 2026-09-17
+
+### Added
+
+- Add one mandatory material declaration per member/date/shift, including explicit
+  no-usage confirmation and Warehouse Admin verification for declarations with items.
+- Add returnable-asset custody, intershift handover, return/inspection, age, condition,
+  cycles/hours, replacement recommendation, and versioned part/tool specifications.
+- Add local dummy Warehouse report data so report layout can be reviewed without
+  writing test records to the server.
+
+### Changed
+
+- Split consumable spareparts and returnable tools throughout Warehouse screens.
+- Treat Receipt quantity as incoming stock and Adjustment quantity as the desired final
+  physical balance, including zero when no active reservation exists.
+- Raise shift closeout to four authoritative steps: Checksheet, Downtime, Work Order,
+  and the shift material register. Server validation does not require superadmin
+  approval for a confirmed no-usage declaration.
+
+### Verified
+
+- Artifact: 14,379,069 bytes; SHA-256
+  `7ad7c562ae7397fdcd8abce0051204ce25b07db78f3f851a9cba6ec5d3cc379b`.
+- APK Signature Scheme v2 verifies with one signer; Android unit `100/100`, release,
+  lint, signature, and full AVD instrumentation passed with 35 pass, three expected
+  environment skips, and zero failures.
+- Controlled staging acceptance covered asset lifecycle, closeout `4/4`, two package
+  submissions, PC import/PDF, background FCM for all three Maintenance roles, private
+  R2, exact cleanup, 21 empty inventory tables, 53 active inventory triggers, and zero
+  foreign-key violations.
+
 ## 0.29.0 - 2026-09-13
 
 ### Changed
