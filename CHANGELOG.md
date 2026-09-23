@@ -2,6 +2,31 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.31.0 - 2026-09-24
+
+### Changed
+
+- Replace the member Maintenance navigation with one shift inspection hub containing
+  Checksheet, Downtime, Work Order, and Tool & Sparepart Inspection.
+- Show module status and next action in the hub, then unlock PDF export only when all
+  four server-authoritative modules are complete.
+- Require every scheduled Shift 1 machine in its two-day block and all four canonical
+  slots for Shift 2 or Shift 3 before checksheet completion is reported.
+- Keep server-accepted checksheets independent of superadmin approval. No-usage
+  material declarations are confirmed by the server; declarations containing items
+  remain subject to Warehouse Admin verification.
+
+### Verified
+
+- Artifact: 14,395,457 bytes; SHA-256
+  `1cb9645ab368ef29c8b0c33d455b0aabb0a2f1bcc4772d8155b51571f7750a6`.
+- APK Signature Scheme v2 verifies with one signer; Android unit `103/103`, release,
+  lint, and full AVD instrumentation passed with 32 pass, three expected environment
+  skips, and zero failures.
+- Controlled staging acceptance covered closeout `4/4`, two scheduled five-form
+  packages, PC import/PDF, visible background FCM, four two-hour checksheet slots,
+  Downtime, Work Order, private R2, exact cleanup, and clean foreign keys.
+
 ## 0.30.0 - 2026-09-17
 
 ### Added

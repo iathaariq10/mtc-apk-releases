@@ -4,6 +4,33 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
+- Version: `0.31.0`
+- Version code: `66`
+- APK: [`releases/v0.31.0/app-release.apk`](releases/v0.31.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.31.0/app-release.apk`
+- SHA-256: `1cb9645ab368ef29c8b0c33d455b0aabb0a2f1bcc4772d8155b51571f7750a6b`
+- OTA rollout target: minimum `0.19.3`, `force_update=true`.
+
+Release `0.31.0` replaces the member Maintenance flow with one shift inspection hub.
+The active shift opens four clear modules: Checksheet, Downtime, Work Order, and Tool &
+Sparepart Inspection. Each module shows its current status and next action; PDF export
+appears below them and unlocks only after all four modules are complete.
+
+The server now checks every scheduled Shift 1 machine in its two-day block and all four
+canonical slots for Shift 2 or Shift 3. A checksheet accepted by the server is enough;
+the member does not wait for superadmin approval. A no-usage material declaration is
+confirmed by the server, while declarations containing items continue to wait for
+Warehouse Admin verification.
+
+Worker API `2026.31` is the matching server contract. The artifact is 14,395,457
+bytes, signed with one PGA Maintenance v2 signer, and passed 103 Android unit tests,
+release/lint/signature checks, plus 32 passed and three expected skipped full
+instrumentation tests on `MTC_API35`. Controlled staging acceptance verified closeout
+`4/4`, two scheduled five-form packages, PC import/PDF, visible background FCM, four
+two-hour slots, private R2, exact cleanup, and zero foreign-key violations.
+
+## Previous Release 0.30.0
+
 - Version: `0.30.0`
 - Version code: `65`
 - APK: [`releases/v0.30.0/app-release.apk`](releases/v0.30.0/app-release.apk)
@@ -11,25 +38,9 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 - SHA-256: `7ad7c562ae7397fdcd8abce0051204ce25b07db78f3f851a9cba6ec5d3cc379b`
 - OTA rollout target: minimum `0.19.3`, `force_update=true`.
 
-Release `0.30.0` adds the mandatory material register for every member/date/shift,
-including an explicit confirmed declaration when no sparepart or tool was used. A
-material declaration with lines waits for Warehouse Admin verification and does not
-change stock implicitly. The four-step shift closeout now covers Checksheet,
-Downtime, Work Order, and this material register.
-
-Warehouse screens separate consumable spareparts from returnable tools. Returnable
-assets carry an admin-defined asset code, shift custody, intershift handover, return
-and inspection, age/cycle/hour tracking, condition, replacement recommendation, and
-versioned specifications. Receipt uses incoming quantity; Adjustment uses the final
-physical stock target and accepts zero when no active reservation exists.
-
-Worker API `2026.30` is the matching server contract. The artifact is 14,379,069
-bytes, signed with one PGA Maintenance v2 signer, and passed 100 Android unit tests,
-release/lint/signature checks, plus 35 passed and three expected skipped full
-instrumentation tests on `MTC_API35`. Controlled staging acceptance verified asset
-lifecycle, closeout `4/4`, two five-form packages, PC import/PDF, visible background
-FCM, private R2, exact cleanup, all 21 inventory tables empty, 53 inventory triggers,
-and zero foreign-key violations.
+Release `0.30.0` added the mandatory material register for every member/date/shift,
+including explicit no-usage confirmation, returnable-asset custody and condition,
+intershift handover, and the separated consumable/returnable Warehouse screens.
 
 ## Previous Release 0.29.0
 
