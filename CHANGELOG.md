@@ -2,6 +2,32 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.32.0 - 2026-09-28
+
+### Added
+
+- Add one server-authoritative inspection session per member and operational shift.
+- Add immutable checksheet revision snapshots and Admin-managed REOPEN, OVERSHIFT,
+  and REPLACEMENT exceptions with reason and validity windows.
+
+### Changed
+
+- Resume the existing shift session on repeated opens and allow member revisions until
+  24 hours after the shift ends.
+- Lock approved, rejected, and imported records unless an authorized Admin exception
+  permits further work.
+
+### Verified
+
+- Artifact: 14,428,225 bytes; SHA-256
+  `96e286db4632d2e50642cc11956e2c0419ddb6dc42a060b85fb104fcc8adfcd7`.
+- APK Signature Scheme v2 verifies with one signer; Android unit, lint, release, and
+  full AVD instrumentation gates passed with 35 scenarios, three expected environment
+  skips, and zero failures.
+- Production recovery and migration passed with 121 backfilled sessions, 386 immutable
+  snapshots, clean integrity, and zero foreign-key violations. Worker API `2026.32`
+  is the matching server contract.
+
 ## 0.31.0 - 2026-09-24
 
 ### Changed

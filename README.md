@@ -4,6 +4,31 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 
 ## Latest Release
 
+- Version: `0.32.0`
+- Version code: `67`
+- APK: [`releases/v0.32.0/app-release.apk`](releases/v0.32.0/app-release.apk)
+- Direct URL: `https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.32.0/app-release.apk`
+- SHA-256: `96e286db4632d2e50642cc11956e2c0419ddb6dc42a060b85fb104fcc8adfcd7`
+- OTA rollout target: minimum `0.19.3`, `force_update=true`.
+
+Release `0.32.0` limits each member to one inspection session for each operational
+shift. Reopening the same shift resumes that session, while revisions remain available
+until 24 hours after the shift ends. Admins can issue time-limited REOPEN, OVERSHIFT,
+or REPLACEMENT exceptions with a recorded reason.
+
+The shift hub keeps the four required modules together and retains immutable revision
+snapshots for audit. Approved, rejected, and imported records remain locked unless an
+authorized Admin exception applies.
+
+Worker API `2026.32` is the matching server contract. The artifact is 14,428,225
+bytes, signed with one PGA Maintenance v2 signer, and passed the Android unit, lint,
+release, signature, and full `MTC_API35` instrumentation gates: 35 scenarios, three
+expected environment skips, and zero failures. Production recovery verified 121
+backfilled sessions, 386 immutable snapshots, clean integrity, and zero foreign-key
+violations.
+
+## Previous Release 0.31.0
+
 - Version: `0.31.0`
 - Version code: `66`
 - APK: [`releases/v0.31.0/app-release.apk`](releases/v0.31.0/app-release.apk)
@@ -11,23 +36,8 @@ Public APK release artifacts for the MTC Maintenance internal OTA channel. This 
 - SHA-256: `1cb9645ab368ef29c8b0c33d455b0aabb0a2f1bcc4772d8155b51571f7750a6b`
 - OTA rollout target: minimum `0.19.3`, `force_update=true`.
 
-Release `0.31.0` replaces the member Maintenance flow with one shift inspection hub.
-The active shift opens four clear modules: Checksheet, Downtime, Work Order, and Tool &
-Sparepart Inspection. Each module shows its current status and next action; PDF export
-appears below them and unlocks only after all four modules are complete.
-
-The server now checks every scheduled Shift 1 machine in its two-day block and all four
-canonical slots for Shift 2 or Shift 3. A checksheet accepted by the server is enough;
-the member does not wait for superadmin approval. A no-usage material declaration is
-confirmed by the server, while declarations containing items continue to wait for
-Warehouse Admin verification.
-
-Worker API `2026.31` is the matching server contract. The artifact is 14,395,457
-bytes, signed with one PGA Maintenance v2 signer, and passed 103 Android unit tests,
-release/lint/signature checks, plus 32 passed and three expected skipped full
-instrumentation tests on `MTC_API35`. Controlled staging acceptance verified closeout
-`4/4`, two scheduled five-form packages, PC import/PDF, visible background FCM, four
-two-hour slots, private R2, exact cleanup, and zero foreign-key violations.
+Release `0.31.0` introduced the unified shift inspection hub and its four required
+modules: Checksheet, Downtime, Work Order, and Tool & Sparepart Inspection.
 
 ## Previous Release 0.30.0
 
