@@ -2,6 +2,20 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.34.0 - 2026-10-06
+
+- Add an explicit “Tidak melakukan checksheet” choice and short reason for each Shift 2/3 slot.
+- Omit machine/Cooling Tower evidence for skipped slots while preserving closeout, review, revision, and audit rules.
+- Show skipped decisions and reasons in A4 PDF, Excel, and SQLite without counting them as performed inspections.
+- Verify 104 unit tests, build/lint/signature v2, 40 emulator scenarios (three expected skips), and 17 compact-screen/PDF scenarios.
+- Staging verified four skipped-slot submissions through the API, reason revision, closeout, SQLite/PDF, and background FCM; temporary data was cleaned.
+- Artifact: 14,428,225 bytes; SHA-256 `67e71f9e6f895c77acd48072b33d2d4e6dca74a053015259fd72c7210cd8f6d1`; matching API `2026.34`.
+
+## 0.33.0 - 2026-10-02
+
+- Members see their own scheduled inspection before, during, and after the shift; Admin exceptions control overshift and reopening.
+- Artifact SHA-256: `b78f378c18e2b737542417970331de8e454e785c3fe68182f1680c100242fe51`; matching API `2026.33`.
+
 ## 0.32.0 - 2026-09-28
 
 ### Added

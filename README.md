@@ -2,19 +2,21 @@
 
 Public APK artifacts and release metadata. Source code, credentials, and operational data belong outside this repository.
 
-## Latest release: 0.33.0
+## Latest release: 0.34.0
 
-- Version code: `68`
-- APK: [app-release.apk](releases/v0.33.0/app-release.apk)
-- SHA-256: `b78f378c18e2b737542417970331de8e454e785c3fe68182f1680c100242fe51`
+- Version code: `69`
+- APK: [app-release.apk](releases/v0.34.0/app-release.apk)
+- SHA-256: `67e71f9e6f895c77acd48072b33d2d4e6dca74a053015259fd72c7210cd8f6d1`
 - Size: 14,428,225 bytes
-- Matching API: `2026.33`
-- OTA: minimum `0.19.3`, `force_update=true`
+- Matching API: `2026.34`
+- OTA policy: minimum `0.19.3`, `force_update=true`
 
-Members see their own inspection from the server schedule. The four modules are locked before the shift starts and remain available for revision within the configured window after it ends. Shift 3 keeps its start date across midnight. Overshift and replacement require active Admin authorization; a checksheet-only reopening does not unlock DT, WO, or material declarations.
+Each two-hour slot in Shift 2 and Shift 3 offers “Tidak melakukan checksheet” with a short reason. Selecting it removes machine and Cooling Tower inputs. Four explicit slot decisions satisfy the checksheet module; DT, WO, and tool/sparepart requirements still apply before PDF export.
 
-Android unit tests (103), build, lint, and signature v2 passed. The MTC_API35 emulator passed 38 scenarios with three expected environment skips and zero failures; five compact-screen scenarios also passed. Physical-device testing is outside this release scope.
+Skipped slots remain visible in review, A4 PDF, Excel, and local SQLite without creating measurements or adding inspection coverage. Members can revise the reason within their existing access window. Submitted decision types are locked, and revision snapshots remain available for audit.
+
+Android unit tests (104), build, lint, and signature v2 passed. MTC_API35 ran 40 scenarios with three expected environment skips and zero failures; all 17 compact-screen/PDF scenarios passed. Staging acceptance verified four real skipped-slot submissions, reason revision, closeout, SQLite/PDF, FCM registration for three roles, and notification delivery while the app was closed. Physical-device testing is outside this release scope.
 
 ## Rollback artifact
 
-[Previous APK 0.32.0](releases/v0.32.0/app-release.apk) remains available for controlled rollback. Its SHA-256 is `96e286db4632d2e50642cc11956e2c0419ddb6dc42a060b85fb104fcc8adfcd7`.
+[Previous APK 0.33.0](releases/v0.33.0/app-release.apk) remains available for controlled rollback. Its SHA-256 is `b78f378c18e2b737542417970331de8e454e785c3fe68182f1680c100242fe51`. Preserve skipped-slot records and revision history when rolling back; earlier clients cannot revise skipped decisions.
