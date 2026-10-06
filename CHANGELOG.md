@@ -6,7 +6,8 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 
 - Publish the verified standalone OTA publisher under `docs/` through HTTPS GitHub Pages, using genuine Superadmin login from a reachable browser. Build and HTTPS source delivery were verified.
 - Keep release checks, publication-history checks, duplicate guards, temporary credentials, and logout identical to the local publisher tested with 18 simulations.
-- Exclude production data and credentials from hosting. APK, Worker, D1 metadata, and production notification status remain unchanged.
+- Exclude production data and credentials from hosting. Hosting preparation did not change APK, Worker, D1 metadata, or production notifications.
+- Verify normal production publication at 05:20 WITA through a genuine Superadmin account: one audit, six notifications for six active accounts without duplicates, and confirmed logout. Existing release metadata remains unchanged; provider/device FCM delivery is unverified.
 
 ## 0.34.0 - 2026-10-06
 

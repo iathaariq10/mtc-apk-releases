@@ -18,11 +18,11 @@ Skipped slots remain visible in review, A4 PDF, Excel, and local SQLite without 
 
 Android unit tests (104), build, lint, and signature v2 passed. MTC_API35 ran 40 scenarios with three expected environment skips and zero failures; all 17 compact-screen/PDF scenarios passed. Staging acceptance verified four real skipped-slot submissions, reason revision, closeout, SQLite/PDF, FCM registration for three roles, and notification delivery while the app was closed. Physical-device testing is outside this release scope.
 
-Activation used the official Cloudflare D1 query API and preserved previous release records. That path did not send an OTA push notification. Production push dispatch remains pending because local HTTPS requests to the Worker time out; clients continue to check the verified manifest.
+Activation used the official Cloudflare D1 query API and preserved previous release records. That initial path did not send notifications. Normal API publication with a genuine Superadmin account was verified on 7 October 2026 at 05:20 WITA: one publication audit, six persistent notifications for all six active accounts, no duplicate recipients, and a revoked publisher session. Provider/device FCM delivery remains unverified; clients continue to check the verified manifest.
 
 ## OTA publication
 
-The checked publisher is served at [the HTTPS release publication page](https://iathaariq10.github.io/mtc-apk-releases/), with source in [docs/index.html](docs/index.html). GitHub Pages build and HTTPS delivery were verified on 7 October 2026; the file matches the local form verified with 18 simulations and a browser render. Production notification dispatch remains pending.
+The checked publisher is served at [the HTTPS release publication page](https://iathaariq10.github.io/mtc-apk-releases/), with source in [docs/index.html](docs/index.html). GitHub Pages build and HTTPS delivery were verified on 7 October 2026; the file matches the local form verified with 18 simulations and a browser render. The production browser operation was verified through its receipt and server records.
 
 The operator signs in with a genuine Superadmin account. Requests go directly from the browser to the maintenance Worker over HTTPS. The form checks health, every release field, and publication history before sending once. It retains no password or bearer token, uses a local marker to prevent a repeat submission when an outcome is uncertain, and attempts logout. An accepted publication does not prove FCM delivery to a phone.
 
