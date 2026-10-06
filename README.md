@@ -22,9 +22,9 @@ Activation used the official Cloudflare D1 query API and preserved previous rele
 
 ## OTA publication
 
-The checked publisher is available in [docs/index.html](docs/index.html), prepared for HTTPS hosting at [the release publication page](https://iathaariq10.github.io/mtc-apk-releases/). It matches the local form verified with 18 simulations and a browser render. Production notification dispatch remains pending.
+The checked publisher is served at [the HTTPS release publication page](https://iathaariq10.github.io/mtc-apk-releases/), with source in [docs/index.html](docs/index.html). GitHub Pages build and HTTPS delivery were verified on 7 October 2026; the file matches the local form verified with 18 simulations and a browser render. Production notification dispatch remains pending.
 
-The operator signs in with a genuine Superadmin account. Requests go directly from the browser to the maintenance Worker over HTTPS. The form checks health, every release field, and publication history before sending once. It retains no password or bearer token, prevents repeat submission when an outcome is uncertain, and attempts logout. An accepted publication does not prove FCM delivery to a phone.
+The operator signs in with a genuine Superadmin account. Requests go directly from the browser to the maintenance Worker over HTTPS. The form checks health, every release field, and publication history before sending once. It retains no password or bearer token, uses a local marker to prevent a repeat submission when an outcome is uncertain, and attempts logout. An accepted publication does not prove FCM delivery to a phone.
 
 Only the static publisher is hosted. Databases, recovery backups, private evidence, and credentials are excluded from the page.
 

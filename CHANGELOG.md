@@ -4,7 +4,7 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 
 ## Release operations - 2026-10-07
 
-- Add the verified standalone OTA publisher under `docs/`, prepared for HTTPS GitHub Pages hosting and genuine Superadmin login from a reachable browser.
+- Publish the verified standalone OTA publisher under `docs/` through HTTPS GitHub Pages, using genuine Superadmin login from a reachable browser. Build and HTTPS source delivery were verified.
 - Keep release checks, publication-history checks, duplicate guards, temporary credentials, and logout identical to the local publisher tested with 18 simulations.
 - Exclude production data and credentials from hosting. APK, Worker, D1 metadata, and production notification status remain unchanged.
 
