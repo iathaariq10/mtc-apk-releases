@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'nonce-kUiGquKf-sWP9D3xqxdnlTui'; style-src 'nonce-kUiGquKf-sWP9D3xqxdnlTui'; connect-src https://mtc-maintenance-api.iathaariq10.workers.dev; base-uri 'none'; form-action 'none'">
+<title>Pemberitahuan Update 0.34.0</title>
+<style nonce="kUiGquKf-sWP9D3xqxdnlTui">
+:root{color-scheme:light;font-family:'Segoe UI',system-ui,sans-serif;color:#182b3b;background:#f3f6f8;font-size:15px}*{box-sizing:border-box}body{margin:0;padding:40px 20px}main{max-width:620px;margin:auto}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#607180;font-weight:650}h1{font-size:30px;letter-spacing:-.025em;margin:12px 0}p{line-height:1.6;color:#556573}.card{margin-top:24px;background:#fff;border:1px solid #dae3e9;border-radius:18px;padding:26px;box-shadow:0 8px 24px #19334507}.release{display:flex;justify-content:space-between;gap:16px;align-items:center;padding-bottom:20px;border-bottom:1px solid #e9eef2}.version{font-size:24px;font-weight:700}.badge{border-radius:20px;background:#eaf4ef;color:#29634b;padding:7px 12px;font-size:12px;font-weight:650}.metadata{font-size:13px;color:#617481;margin:8px 0 0}label{display:block;margin:20px 0 8px;font-weight:600;font-size:14px}input{width:100%;padding:12px 14px;font:inherit;color:inherit;border:1px solid #c6d2db;border-radius:10px;background:#fff}input:focus{outline:3px solid #d7eee7;border-color:#347e68}button{font:inherit;font-weight:650;border:0;border-radius:10px;padding:13px 16px;cursor:pointer}button:focus-visible,summary:focus-visible{outline:3px solid #347e68;outline-offset:3px}.primary{margin-top:22px;width:100%;background:#246d58;color:white}.primary:hover{background:#195d4a}.primary:disabled{background:#a6b4ae;cursor:default}.secondary{background:#edf2f5;color:#233b4b;margin-top:12px}.status{margin:18px 0 0;padding:14px;border-radius:10px;background:#f0f4f7;line-height:1.5;font-size:14px}.status.success{background:#eaf5ef;color:#245b45}.status.error{background:#fff2eb;color:#8b4423}details{margin-top:18px;font-size:13px;color:#607180}summary{cursor:pointer}code{overflow-wrap:anywhere;display:block;margin:10px 0;font-size:12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f6f8fa;border:1px solid #e2e9ee;border-radius:10px;padding:14px;font-size:12px;line-height:1.5;margin-bottom:0}.note{font-size:12px;line-height:1.5;margin-bottom:0}footer{font-size:12px;color:#738390;text-align:center;margin-top:20px}[hidden]{display:none!important}@media(max-width:500px){body{padding:24px 14px}h1{font-size:25px}.card{padding:20px}.release{align-items:flex-start;flex-direction:column;gap:10px}}@media(prefers-reduced-motion:no-preference){.card{animation:enter .25s ease-out}@keyframes enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}}
+</style></head><body><main><div class="eyebrow">Publikasi OTA</div><h1>Pemberitahuan pembaruan</h1><p>Kirim pemberitahuan versi 0.34.0 ke seluruh akun aktif melalui alur publikasi OTA.</p><section class="card" aria-label="Pemberitahuan rilis"><div class="release"><div><div class="version">APK 0.34.0</div><div class="metadata">API 2026.34 &middot; Pembaruan wajib</div></div><span class="badge">Manifest terverifikasi</span></div>
+<form id="publisher-form"><label for="username">Username Superadmin</label><input id="username" name="username" autocomplete="username" required autocapitalize="none" spellcheck="false"><label for="password">Kata sandi</label><input id="password" name="password" type="password" autocomplete="current-password" required><button class="primary" id="send" type="submit">Kirim pemberitahuan</button></form><p class="note">Formulir memakai koneksi HTTPS langsung ke server. Kata sandi dan token sesi tidak disimpan oleh formulir.</p>
+<div id="status" class="status" role="status" aria-live="polite">Isi akun Superadmin untuk memulai.</div><details><summary>Rilis dan server tujuan</summary><code>https://mtc-maintenance-api.iathaariq10.workers.dev</code><code>SHA-256: 67e71f9e6f895c77acd48072b33d2d4e6dca74a053015259fd72c7210cd8f6d1</code></details><section id="result" hidden><pre id="receipt"></pre><button class="secondary" id="copy" type="button">Salin hasil</button></section></section><footer>Rilis tetap aktif. Formulir ini menyelesaikan pemberitahuan pembaruan.</footer></main>
+<script nonce="kUiGquKf-sWP9D3xqxdnlTui" id="publisher-core">
+(() => {
+  'use strict';
+  const API = 'https://mtc-maintenance-api.iathaariq10.workers.dev';
+  const EXPECTED = {"ok":true,"latest_apk_version":"0.34.0","min_supported_apk_version":"0.19.3","api_version":"2026.34","settings_version":"settings-20260831-092139","form_version":"2026.08.4","force_update":true,"apk_url":"https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.34.0/app-release.apk","apk_sha256":"67e71f9e6f895c77acd48072b33d2d4e6dca74a053015259fd72c7210cd8f6d1","release_notes":"Shift 2/3: pilihan Tidak melakukan checksheet per slot dengan alasan. Riwayat dan PDF menyimpan keputusan; slot yang dilewati tidak dihitung sebagai pemeriksaan."};
+  const MARKER = 'mtc-ota-publication:0.34.0:' + EXPECTED.apk_sha256;
+  class PublisherError extends Error {
+    constructor(code, message) { super(message); this.code = code; }
+  }
+  function matchesManifest(value) {
+    return value && Object.keys(EXPECTED).every(key => value[key] === EXPECTED[key]);
+  }
+  function publicationEvents(exported) {
+    if (!Array.isArray(exported.audit_events) || exported.export?.truncated !== false) {
+      throw new PublisherError('INCOMPLETE_AUDIT', 'Riwayat publikasi belum dapat diperiksa lengkap. Pengiriman dihentikan.');
+    }
+    return exported.audit_events.filter(event => event.action === 'ota.release.upsert'
+      && (event.entity_id === 'ota-0.34.0' || event.detail?.version === '0.34.0'));
+  }
+  function createPublisher({fetchImpl, storage, now = () => new Date(), onStep = () => {}, clearPassword = () => {}}) {
+    let busy = false;
+    async function request(path, {method = 'GET', token = '', body, timeout = 15000} = {}) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), timeout);
+      const headers = {'Accept':'application/json','X-App-Version':'0.34.0'};
+      if (token) headers.Authorization = 'Bearer ' + token;
+      if (body !== undefined) headers['Content-Type'] = 'application/json';
+      try {
+        const response = await fetchImpl(API + path, {
+          method, headers, credentials:'omit', redirect:'error', referrerPolicy:'no-referrer',
+          signal:controller.signal, ...(body === undefined ? {} : {body:JSON.stringify(body)})
+        });
+        if (!response.ok) {
+          const message = response.status === 401 ? 'Username atau kata sandi tidak diterima.'
+            : response.status === 403 ? 'Akun ini tidak memiliki akses Superadmin.'
+            : response.status === 429 ? 'Server membatasi permintaan. Tunggu sebelum mencoba lagi.'
+            : 'Server belum menerima permintaan. Kode HTTP ' + response.status + '.';
+          throw new PublisherError('HTTP_' + response.status, message);
+        }
+        const json = await response.json();
+        if (json.ok !== true) throw new PublisherError('API_ERROR', 'Server belum mengonfirmasi permintaan.');
+        return json.data && typeof json.data === 'object' ? json.data : json;
+      } catch (error) {
+        if (error instanceof PublisherError) throw error;
+        throw new PublisherError('NETWORK', 'Server belum dapat dihubungi dari browser ini.');
+      } finally { clearTimeout(timer); }
+    }
+    async function run(username, password) {
+      if (busy) throw new PublisherError('BUSY', 'Proses pengiriman masih berjalan.');
+      busy = true;
+      let token = '', submitted = false;
+      const receipt = {
+        release:'0.34.0', api_version:'2026.34', apk_sha256:EXPECTED.apk_sha256,
+        started_at_utc:now().toISOString(), status:'not_submitted',
+        publication_attempted:false, publication_accepted:false,
+        audit_recorded:false, push_delivery_verified:false, logout_confirmed:false
+      };
+      const auditPath = '/v1/audit/export?from=2026-10-05&to=' + now().toISOString().slice(0,10) + '&format=json&limit=5000';
+      try {
+        if (!username.trim() || !password) throw new PublisherError('CREDENTIALS_REQUIRED', 'Isi username dan kata sandi Superadmin.');
+        let marker;
+        try { marker = storage.getItem(MARKER); } catch { throw new PublisherError('STORAGE', 'Browser tidak dapat menyimpan penanda pengiriman. Gunakan browser biasa.'); }
+        if (marker) throw new PublisherError('LOCAL_LOCK', 'Versi ini sudah pernah diproses di browser ini. Kirim hasil sebelumnya untuk diperiksa sebelum mengulang.');
+        onStep('health');
+        const health = await request('/health');
+        if (health.status !== 'ok' || health.service !== 'mtc-maintenance-api') throw new PublisherError('HEALTH', 'Layanan belum siap menerima publikasi.');
+        onStep('manifest');
+        if (!matchesManifest(await request('/v1/update/manifest'))) throw new PublisherError('MANIFEST_CHANGED', 'Metadata rilis telah berubah. Pengiriman dihentikan agar tidak menimpa rilis lain.');
+        onStep('login');
+        let session;
+        try {
+          session = await request('/v1/auth/login', {method:'POST', body:{username:username.trim(),password,device_id:'ota-release-browser-0.34.0'}});
+        } finally { password = ''; clearPassword(); }
+        token = typeof session.token === 'string' ? session.token : '';
+        if (!token) throw new PublisherError('SESSION', 'Server tidak memberikan sesi login.');
+        if (session.user?.role !== 'super_admin') throw new PublisherError('ROLE', 'Gunakan akun dengan role Superadmin.');
+        onStep('audit');
+        const existing = publicationEvents(await request(auditPath, {token}));
+        if (existing.length) {
+          receipt.status = 'already_published'; receipt.audit_recorded = true;
+          return receipt;
+        }
+        if (!matchesManifest(await request('/v1/update/manifest'))) throw new PublisherError('MANIFEST_CHANGED', 'Metadata rilis berubah selama pemeriksaan. Pengiriman dihentikan.');
+        try { storage.setItem(MARKER, JSON.stringify({state:'pending',at:now().toISOString()})); }
+        catch { throw new PublisherError('STORAGE', 'Penanda pengiriman tidak dapat disimpan. Pengiriman dihentikan.'); }
+        onStep('publish');
+        submitted = true; receipt.publication_attempted = true;
+        const published = await request('/v1/update/manifest', {method:'POST',token,timeout:45000,body:{
+          id:'ota-0.34.0',version:EXPECTED.latest_apk_version,min_supported_version:EXPECTED.min_supported_apk_version,
+          api_version:EXPECTED.api_version,settings_version:EXPECTED.settings_version,form_version:EXPECTED.form_version,
+          force_update:EXPECTED.force_update,apk_url:EXPECTED.apk_url,apk_sha256:EXPECTED.apk_sha256,release_notes:EXPECTED.release_notes
+        }});
+        if (!matchesManifest(published)) throw new PublisherError('PUBLICATION_MISMATCH', 'Respons publikasi berbeda dari rilis yang disiapkan.');
+        receipt.publication_accepted = true; receipt.status = 'accepted_verification_pending';
+        onStep('verify');
+        try {
+          receipt.audit_recorded = publicationEvents(await request(auditPath,{token})).length > 0;
+          if (receipt.audit_recorded) {
+            receipt.status = 'accepted_audit_verified';
+            storage.setItem(MARKER, JSON.stringify({state:'accepted',at:now().toISOString()}));
+          }
+        } catch { receipt.status = 'accepted_verification_pending'; }
+        return receipt;
+      } catch (error) {
+        receipt.status = submitted ? 'submission_uncertain' : 'not_submitted';
+        receipt.error_code = submitted ? 'SUBMISSION_UNCERTAIN' : (error.code || 'ERROR');
+        receipt.message = submitted ? 'Hasil pengiriman belum dapat dipastikan. Salin hasil ini sebelum mencoba kembali.' : (error instanceof PublisherError ? error.message : 'Proses belum dapat diselesaikan.');
+        return receipt;
+      } finally {
+        password = ''; clearPassword();
+        if (token) {
+          onStep('logout');
+          try { await request('/v1/auth/logout',{method:'POST',token,body:{}}); receipt.logout_confirmed = true; }
+          catch { receipt.logout_confirmed = false; }
+        }
+        token = ''; busy = false; receipt.finished_at_utc = now().toISOString(); onStep('done');
+      }
+    }
+    return {run};
+  }
+  globalThis.MtcOtaPublisher = {createPublisher,matchesManifest,publicationEvents,EXPECTED,MARKER};
+})();
+</script>
+<script nonce="kUiGquKf-sWP9D3xqxdnlTui">
+(() => {
+  const form=document.getElementById('publisher-form'), password=document.getElementById('password'), send=document.getElementById('send'), status=document.getElementById('status'), receiptBox=document.getElementById('receipt');
+  const steps={health:'Memeriksa koneksi server...',manifest:'Memeriksa metadata rilis...',login:'Memeriksa akses Superadmin...',audit:'Memeriksa riwayat publikasi...',publish:'Mengirim pemberitahuan...',verify:'Memeriksa hasil publikasi...',logout:'Menutup sesi...'};
+  let browserStorage;
+  try{browserStorage=window.localStorage}catch{status.className='status error';status.textContent='Penyimpanan browser tidak tersedia. Buka formulir di browser biasa.';send.disabled=true;return}
+  const publisher=MtcOtaPublisher.createPublisher({fetchImpl:window.fetch.bind(window),storage:browserStorage,onStep:step=>{if(steps[step])status.textContent=steps[step]},clearPassword:()=>{password.value=''}});
+  document.documentElement.dataset.publisherReady='true';
+  form.addEventListener('submit',async event=>{
+    event.preventDefault(); if(send.disabled)return; send.disabled=true; status.className='status';
+    let receipt;
+    try{receipt=await publisher.run(document.getElementById('username').value,password.value)}catch{receipt={release:'0.34.0',status:'not_submitted',message:'Proses belum dapat dijalankan.'}}
+    password.value='';receiptBox.textContent=JSON.stringify(receipt,null,2);document.getElementById('result').hidden=false;
+    const accepted=receipt.publication_accepted||receipt.status==='already_published';status.className='status '+(accepted?'success':'error');
+    status.textContent=receipt.status==='already_published'?'Rilis ini sudah tercatat pernah dipublikasikan. Pemberitahuan tidak dikirim ulang.':receipt.publication_accepted?'Publikasi diterima. Salin hasil untuk pemeriksaan notifikasi; penerimaan di HP belum diverifikasi.':receipt.message||'Proses belum dapat diselesaikan.';
+    if(!receipt.publication_attempted&&!accepted)send.disabled=false;
+  });
+  document.getElementById('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(receiptBox.textContent);document.getElementById('copy').textContent='Hasil tersalin'}catch{const selection=window.getSelection(),range=document.createRange();range.selectNodeContents(receiptBox);selection.removeAllRanges();selection.addRange(range);document.getElementById('copy').textContent='Tekan Ctrl+C untuk menyalin'}});
+})();
+</script></body></html>

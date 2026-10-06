@@ -1,6 +1,6 @@
 ﻿# mtc-apk-releases
 
-Public APK artifacts and release metadata. Source code, credentials, and operational data belong outside this repository.
+Public APK artifacts, release metadata, and the browser OTA publisher. Application source code, credentials, and operational data belong outside this repository.
 
 ## Latest release: 0.34.0
 
@@ -19,6 +19,14 @@ Skipped slots remain visible in review, A4 PDF, Excel, and local SQLite without 
 Android unit tests (104), build, lint, and signature v2 passed. MTC_API35 ran 40 scenarios with three expected environment skips and zero failures; all 17 compact-screen/PDF scenarios passed. Staging acceptance verified four real skipped-slot submissions, reason revision, closeout, SQLite/PDF, FCM registration for three roles, and notification delivery while the app was closed. Physical-device testing is outside this release scope.
 
 Activation used the official Cloudflare D1 query API and preserved previous release records. That path did not send an OTA push notification. Production push dispatch remains pending because local HTTPS requests to the Worker time out; clients continue to check the verified manifest.
+
+## OTA publication
+
+The checked publisher is available in [docs/index.html](docs/index.html), prepared for HTTPS hosting at [the release publication page](https://iathaariq10.github.io/mtc-apk-releases/). It matches the local form verified with 18 simulations and a browser render. Production notification dispatch remains pending.
+
+The operator signs in with a genuine Superadmin account. Requests go directly from the browser to the maintenance Worker over HTTPS. The form checks health, every release field, and publication history before sending once. It retains no password or bearer token, prevents repeat submission when an outcome is uncertain, and attempts logout. An accepted publication does not prove FCM delivery to a phone.
+
+Only the static publisher is hosted. Databases, recovery backups, private evidence, and credentials are excluded from the page.
 
 ## Rollback artifact
 

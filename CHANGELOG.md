@@ -2,6 +2,12 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## Release operations - 2026-10-07
+
+- Add the verified standalone OTA publisher under `docs/`, prepared for HTTPS GitHub Pages hosting and genuine Superadmin login from a reachable browser.
+- Keep release checks, publication-history checks, duplicate guards, temporary credentials, and logout identical to the local publisher tested with 18 simulations.
+- Exclude production data and credentials from hosting. APK, Worker, D1 metadata, and production notification status remain unchanged.
+
 ## 0.34.0 - 2026-10-06
 
 - Add an explicit “Tidak melakukan checksheet” choice and short reason for each Shift 2/3 slot.
