@@ -1,23 +1,27 @@
 <!doctype html>
 <html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'nonce-kUiGquKf-sWP9D3xqxdnlTui'; style-src 'nonce-kUiGquKf-sWP9D3xqxdnlTui'; connect-src https://mtc-maintenance-api.iathaariq10.workers.dev; base-uri 'none'; form-action 'none'">
-<title>Pemberitahuan Update 0.35.0</title>
+<title>Aktivasi Update 0.35.0</title>
 <style nonce="kUiGquKf-sWP9D3xqxdnlTui">
 :root{color-scheme:light;font-family:'Segoe UI',system-ui,sans-serif;color:#182b3b;background:#f3f6f8;font-size:15px}*{box-sizing:border-box}body{margin:0;padding:40px 20px}main{max-width:620px;margin:auto}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#607180;font-weight:650}h1{font-size:30px;letter-spacing:-.025em;margin:12px 0}p{line-height:1.6;color:#556573}.card{margin-top:24px;background:#fff;border:1px solid #dae3e9;border-radius:18px;padding:26px;box-shadow:0 8px 24px #19334507}.release{display:flex;justify-content:space-between;gap:16px;align-items:center;padding-bottom:20px;border-bottom:1px solid #e9eef2}.version{font-size:24px;font-weight:700}.badge{border-radius:20px;background:#eaf4ef;color:#29634b;padding:7px 12px;font-size:12px;font-weight:650}.metadata{font-size:13px;color:#617481;margin:8px 0 0}label{display:block;margin:20px 0 8px;font-weight:600;font-size:14px}input{width:100%;padding:12px 14px;font:inherit;color:inherit;border:1px solid #c6d2db;border-radius:10px;background:#fff}input:focus{outline:3px solid #d7eee7;border-color:#347e68}button{font:inherit;font-weight:650;border:0;border-radius:10px;padding:13px 16px;cursor:pointer}button:focus-visible,summary:focus-visible{outline:3px solid #347e68;outline-offset:3px}.primary{margin-top:22px;width:100%;background:#246d58;color:white}.primary:hover{background:#195d4a}.primary:disabled{background:#a6b4ae;cursor:default}.secondary{background:#edf2f5;color:#233b4b;margin-top:12px}.status{margin:18px 0 0;padding:14px;border-radius:10px;background:#f0f4f7;line-height:1.5;font-size:14px}.status.success{background:#eaf5ef;color:#245b45}.status.error{background:#fff2eb;color:#8b4423}details{margin-top:18px;font-size:13px;color:#607180}summary{cursor:pointer}code{overflow-wrap:anywhere;display:block;margin:10px 0;font-size:12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f6f8fa;border:1px solid #e2e9ee;border-radius:10px;padding:14px;font-size:12px;line-height:1.5;margin-bottom:0}.note{font-size:12px;line-height:1.5;margin-bottom:0}footer{font-size:12px;color:#738390;text-align:center;margin-top:20px}[hidden]{display:none!important}@media(max-width:500px){body{padding:24px 14px}h1{font-size:25px}.card{padding:20px}.release{align-items:flex-start;flex-direction:column;gap:10px}}@media(prefers-reduced-motion:no-preference){.card{animation:enter .25s ease-out}@keyframes enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}}
-</style></head><body><main><div class="eyebrow">Publikasi OTA</div><h1>Pemberitahuan pembaruan</h1><p>Kirim pemberitahuan versi 0.35.0 ke seluruh akun aktif melalui alur publikasi OTA.</p><section class="card" aria-label="Pemberitahuan rilis"><div class="release"><div><div class="version">APK 0.35.0</div><div class="metadata">API 2026.35 &middot; Pembaruan wajib</div></div><span class="badge">Manifest terverifikasi</span></div>
-<form id="publisher-form"><label for="username">Username Superadmin</label><input id="username" name="username" autocomplete="username" required autocapitalize="none" spellcheck="false"><label for="password">Kata sandi</label><input id="password" name="password" type="password" autocomplete="current-password" required><button class="primary" id="send" type="submit">Kirim pemberitahuan</button></form><p class="note">Formulir memakai koneksi HTTPS langsung ke server. Kata sandi dan token sesi tidak disimpan oleh formulir.</p>
-<div id="status" class="status" role="status" aria-live="polite">Isi akun Superadmin untuk memulai.</div><details><summary>Rilis dan server tujuan</summary><code>https://mtc-maintenance-api.iathaariq10.workers.dev</code><code>SHA-256: b120019ae57f2c5f0b56d7840728be7cc6cdd5eb11f501cdec92f45f3c6a38fd</code></details><section id="result" hidden><pre id="receipt"></pre><button class="secondary" id="copy" type="button">Salin hasil</button></section></section><footer>Rilis tetap aktif. Formulir ini menyelesaikan pemberitahuan pembaruan.</footer></main>
+</style></head><body><main><div class="eyebrow">Publikasi OTA</div><h1>Aktivasi pembaruan</h1><p>Aktifkan manifest 0.35.0 dan kirim pemberitahuan ke akun aktif melalui sesi Superadmin.</p><section class="card" aria-label="Aktivasi rilis"><div class="release"><div><div class="version">APK 0.35.0</div><div class="metadata">API 2026.35 &middot; Pembaruan wajib</div></div><span class="badge">APK publik terverifikasi</span></div>
+<form id="publisher-form"><label for="username">Username Superadmin</label><input id="username" name="username" autocomplete="username" required autocapitalize="none" spellcheck="false"><label for="password">Kata sandi</label><input id="password" name="password" type="password" autocomplete="current-password" required><button class="primary" id="send" type="submit">Aktifkan & kirim pemberitahuan</button></form><p class="note">Server hanya menerima manifest lama 0.34.0 yang sudah dikenal atau target 0.35.0. Form memakai HTTPS; kata sandi dan token sesi tidak disimpan.</p>
+<div id="status" class="status" role="status" aria-live="polite">Isi akun Superadmin untuk memulai.</div><details><summary>Rilis dan server tujuan</summary><code>https://mtc-maintenance-api.iathaariq10.workers.dev</code><code>SHA-256: b120019ae57f2c5f0b56d7840728be7cc6cdd5eb11f501cdec92f45f3c6a38fd</code></details><section id="result" hidden><pre id="receipt"></pre><button class="secondary" id="copy" type="button">Salin hasil</button></section></section><footer>Manifest berubah setelah server menerima publikasi. Simpan receipt untuk audit.</footer></main>
 <script nonce="kUiGquKf-sWP9D3xqxdnlTui" id="publisher-core">
 (() => {
   'use strict';
   const API = 'https://mtc-maintenance-api.iathaariq10.workers.dev';
   const EXPECTED = {"ok":true,"latest_apk_version":"0.35.0","min_supported_apk_version":"0.19.3","api_version":"2026.35","settings_version":"settings-20260831-092139","form_version":"2026.08.4","force_update":true,"apk_url":"https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.35.0/app-release.apk","apk_sha256":"b120019ae57f2c5f0b56d7840728be7cc6cdd5eb11f501cdec92f45f3c6a38fd","release_notes":"Shift 1 mengikuti blok jadwal dua hari. Riwayat Shift 3 dapat dikirim atau direvisi dalam batas server. Downtime mencatat tipe mesin, mold terpasang, dan sasaran perbaikan."};
+  const PREVIOUS = {"ok":true,"latest_apk_version":"0.34.0","min_supported_apk_version":"0.19.3","api_version":"2026.34","settings_version":"settings-20260831-092139","form_version":"2026.08.4","force_update":true,"apk_url":"https://raw.githubusercontent.com/iathaariq10/mtc-apk-releases/main/releases/v0.34.0/app-release.apk","apk_sha256":"67e71f9e6f895c77acd48072b33d2d4e6dca74a053015259fd72c7210cd8f6d1","release_notes":"Shift 2/3: pilihan Tidak melakukan checksheet per slot dengan alasan. Riwayat dan PDF menyimpan keputusan; slot yang dilewati tidak dihitung sebagai pemeriksaan."};
   const MARKER = 'mtc-ota-publication:0.35.0:' + EXPECTED.apk_sha256;
   class PublisherError extends Error {
     constructor(code, message) { super(message); this.code = code; }
   }
   function matchesManifest(value) {
     return value && Object.keys(EXPECTED).every(key => value[key] === EXPECTED[key]);
+  }
+  function matchesKnownManifest(value) {
+    return matchesManifest(value) || (value && Object.keys(PREVIOUS).every(key => value[key] === PREVIOUS[key]));
   }
   function publicationEvents(exported) {
     if (!Array.isArray(exported.audit_events) || exported.export?.truncated !== false) {
@@ -74,7 +78,7 @@
         const health = await request('/health');
         if (health.status !== 'ok' || health.service !== 'mtc-maintenance-api') throw new PublisherError('HEALTH', 'Layanan belum siap menerima publikasi.');
         onStep('manifest');
-        if (!matchesManifest(await request('/v1/update/manifest'))) throw new PublisherError('MANIFEST_CHANGED', 'Metadata rilis telah berubah. Pengiriman dihentikan agar tidak menimpa rilis lain.');
+        if (!matchesKnownManifest(await request('/v1/update/manifest'))) throw new PublisherError('MANIFEST_CHANGED', 'Manifest aktif tidak cocok dengan rilis sebelumnya atau target. Pengiriman dihentikan.');
         onStep('login');
         let session;
         try {
@@ -86,10 +90,11 @@
         onStep('audit');
         const existing = publicationEvents(await request(auditPath, {token}));
         if (existing.length) {
+          if (!matchesManifest(await request('/v1/update/manifest', {token}))) throw new PublisherError('AUDIT_WITHOUT_ACTIVE_RELEASE', 'Riwayat mencatat rilis 0.35.0, tetapi manifest tersebut tidak aktif. Hubungi Admin sebelum mengulang.');
           receipt.status = 'already_published'; receipt.audit_recorded = true;
           return receipt;
         }
-        if (!matchesManifest(await request('/v1/update/manifest'))) throw new PublisherError('MANIFEST_CHANGED', 'Metadata rilis berubah selama pemeriksaan. Pengiriman dihentikan.');
+        if (!matchesKnownManifest(await request('/v1/update/manifest'))) throw new PublisherError('MANIFEST_CHANGED', 'Manifest berubah ke versi yang tidak dikenal selama pemeriksaan. Pengiriman dihentikan.');
         try { storage.setItem(MARKER, JSON.stringify({state:'pending',at:now().toISOString()})); }
         catch { throw new PublisherError('STORAGE', 'Penanda pengiriman tidak dapat disimpan. Pengiriman dihentikan.'); }
         onStep('publish');
@@ -127,7 +132,7 @@
     }
     return {run};
   }
-  globalThis.MtcOtaPublisher = {createPublisher,matchesManifest,publicationEvents,EXPECTED,MARKER};
+  globalThis.MtcOtaPublisher = {createPublisher,matchesManifest,matchesKnownManifest,publicationEvents,EXPECTED,PREVIOUS,MARKER};
 })();
 </script>
 <script nonce="kUiGquKf-sWP9D3xqxdnlTui">

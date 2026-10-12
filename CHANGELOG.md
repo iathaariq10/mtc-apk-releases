@@ -16,6 +16,7 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 - Record downtime machine type, installed mold snapshot, and machine/mold repair target through reports without guessing historical values.
 - Verify 105 Android unit tests, lint, matching v2 signer, in-place upgrade, cold launch, and 41 MTC_API35 trials with three expected FCM environment skips and zero failures. Two staging live acceptances passed with exact cleanup.
 - Artifact: 14,444,609 bytes; SHA-256 `b120019ae57f2c5f0b56d7840728be7cc6cdd5eb11f501cdec92f45f3c6a38fd`; matching API `2026.35`. Production manifest still points to `0.34.0` pending audited Superadmin publication.
+- Update the HTTPS publisher to activate `0.35.0` from only the exact known `0.34.0` manifest, reject unknown/raced states, confirm complete audit, and avoid duplicate notification. Six isolated publisher scenarios pass.
 
 ## 0.34.0 - 2026-10-06
 
