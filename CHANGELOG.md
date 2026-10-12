@@ -9,6 +9,14 @@ Every OTA artifact or metadata change must be recorded here in the same commit.
 - Exclude production data and credentials from hosting. Hosting preparation did not change APK, Worker, D1 metadata, or production notifications.
 - Verify normal production publication at 05:20 WITA through a genuine Superadmin account: one audit, six notifications for six active accounts without duplicates, and confirmed logout. Existing release metadata remains unchanged; provider/device FCM delivery is unverified.
 
+## 0.35.0 - 2026-10-12 — artifact published; OTA activation pending
+
+- Align Shift 1 export with the two-day schedule block: day one may export without a checksheet; on day two each scheduled machine needs one accepted checksheet from the block.
+- Keep Shift 3 submission and revision available to its owner across midnight, within the server window.
+- Record downtime machine type, installed mold snapshot, and machine/mold repair target through reports without guessing historical values.
+- Verify 105 Android unit tests, lint, matching v2 signer, in-place upgrade, cold launch, and 41 MTC_API35 trials with three expected FCM environment skips and zero failures. Two staging live acceptances passed with exact cleanup.
+- Artifact: 14,444,609 bytes; SHA-256 `b120019ae57f2c5f0b56d7840728be7cc6cdd5eb11f501cdec92f45f3c6a38fd`; matching API `2026.35`. Production manifest still points to `0.34.0` pending audited Superadmin publication.
+
 ## 0.34.0 - 2026-10-06
 
 - Add an explicit “Tidak melakukan checksheet” choice and short reason for each Shift 2/3 slot.
