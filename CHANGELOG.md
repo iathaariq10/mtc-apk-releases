@@ -2,6 +2,14 @@
 
 Every OTA artifact or metadata change must be recorded here in the same commit.
 
+## 0.36.0 - 2026-10-16 - artifact published; activation pending verification
+
+- Export a shift PDF directly from Pemeriksaan while retaining authoritative closeout, ownership, machine and revision rules.
+- Simplify both workspaces' headers, insets, navigation and menus. DT/WO PDF flows in A4 portrait; warehouse export preserves the selected snapshot/account across Save As.
+- Verify 105 unit tests, lint, compact-screen trial, public signer, in-place upgrade and cold launch on MTC_API35.
+- APK SHA-256 `43d4ac9b9b44e942febd3426abdf669110cd6ff7275efc251cfb3e008b1cec97`; 14444609 bytes; API remains `2026.35`.
+- Update publisher metadata and recognize explicit provider-deployment audit records without claiming app authentication or push delivery.
+
 ## Release operations - 2026-10-07
 
 - Publish the verified standalone OTA publisher under `docs/` through HTTPS GitHub Pages, using genuine Superadmin login from a reachable browser. Build and HTTPS source delivery were verified.
