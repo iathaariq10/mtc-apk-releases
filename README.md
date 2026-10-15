@@ -10,7 +10,7 @@ Public APK artifacts and a guarded HTTPS OTA publisher. Source code, credentials
 - Direct PDF export from the member's inspection, compact maintenance/warehouse navigation, flowing A4 portrait DT/WO PDF, and account/month-bound warehouse exports.
 - Verified: 105 Android unit tests, lint, affected compact-screen trials, matching public v2 signer, upgrade from 0.35.0 and 8-second cold launch on MTC_API35. Physical-device testing is outside this release scope.
 
-Production manifest was verified at 0.35.0 before this artifact publication. Activation of 0.36.0 requires the deployment record and a read-only check of the public manifest. Artifact publication alone does not prove activation or notification delivery.
+Production manifest 0.36.0 was activated and verified on 16 October 2026 after the public HTTPS APK hash matched. A guarded Cloudflare OAuth configuration deployment added one release and one provider audit record, preserving business rows and the previous release. Backup recovery verified 75 tables, 94 indexes, 107 triggers and zero foreign-key violations. No app session was created and no new push notification was sent.
 
 ## OTA operations
 
