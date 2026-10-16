@@ -1,11 +1,11 @@
 # Changelog
 
-## 0.37.0 — 2026-10-16 — artifact published; activation pending verification
+## 0.37.0 — 2026-10-16 — production activation verified
 
 - Add contextual Shift 1 production observations and an A4 portrait evidence appendix.
 - Preserve unavailable readings, decimal values, measured zero and legacy-history revisions.
 - Verify 107 unit tests, lint, 320 dp UI, checked PDFs, JSON contract, signed upgrade and release cold launch.
-- SHA-256 `c7b4adc62491a76c32b19a7b37db9580eebf516cb93de1898837a07bd2f763de`. Target API 2026.37/form 2026.08.5; activation follows Desktop 1.18.0 and audited configuration deployment.
+- SHA-256 `c7b4adc62491a76c32b19a7b37db9580eebf516cb93de1898837a07bd2f763de`. Target API 2026.37/form 2026.08.5; activation verified after Desktop 1.18.0 and atomic audited provider deployment; no app login or push broadcast.
 
 
 Every OTA artifact or metadata change must be recorded here in the same commit.

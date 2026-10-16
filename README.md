@@ -10,7 +10,7 @@ Public APK artifacts and the guarded HTTPS OTA publisher. Source, credentials an
 - Production evidence appears in the checked-PDF appendix. The four existing checked-sheet templates remain intact.
 - Verified: 107 unit tests, lint, focused UI/PDF/JSON trials including 320 dp, matching v2 signer, direct signed release upgrade from 0.36.0 and eight-second cold launch on MTC_API35. Physical-device testing is outside this scope.
 
-Artifact publication precedes configuration activation. Target API 2026.37/form 2026.08.5 requires Desktop 1.18.0 first. Production activation is pending its provider deployment record and live manifest/hash verification. The publisher remains on the previous activated release until activation is verified.
+Production 0.37.0/API 2026.37/form 2026.08.5 was activated and read-only verified on 16 October 2026 after Desktop 1.18.0 passed installation verification. Settings settings-20261016-113033 preserves all prior numeric limits and enables only the seven new production fields by operation status. Public APK hash and exact active Settings/form payloads match. The provider transaction added one record per configuration table and three audit records; business counts and foreign-key integrity remain unchanged. No application session or new push notification was created.
 
 ## Operations
 
