@@ -1,6 +1,8 @@
 # Changelog
 
-## 0.38.0 — 2026-10-17 — artifact published; activation pending verification
+## 0.38.0 — 2026-10-17 — production activation verified
+
+- Manifest/hash aktif terverifikasi; Settings dan form tetap identik. Uji publisher 9 skenario lulus; deployment provider tanpa login aplikasi/push baru.
 
 - Material otomatis dari master mold; resep dan cara ukur tidak diminta ulang.
 - Pembacaan aktual tetap menyimpan desimal, nol dan N/A. Mode tanpa pembacaan tidak menambah halaman PDF kosong.

@@ -9,7 +9,7 @@
 - PDF pengamatan hanya muncul bila ada pembacaan. Empat template checksheet lama tetap; lampiran baru A4 portrait.
 - Lulus 107 unit/lint, trial 5 UI/PDF + 1 layar 320 dp + 3 kontrak JSON, upgrade release 0.37 ke 0.38 dan startup delapan detik di MTC_API35. Bukan verifikasi HP fisik.
 
-Artefak terbit setelah Desktop 1.19.0 dan API 2026.38 terpasang. Aktivasi manifest OTA masih Pending Verification; publisher tetap pada versi yang sudah aktif sampai audit aktivasi selesai.
+OTA 0.38.0/API 2026.38 aktif dan terverifikasi pada 17 Oktober 2026 setelah Desktop 1.19.0 terpasang. Hash APK publik cocok; Settings dan wire form 2026.08.5 tetap identik. Transaksi menambah satu release dan satu audit tanpa mengubah data bisnis, membuat login aplikasi, atau mengirim push baru.
 
 ## Operasional
 
