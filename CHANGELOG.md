@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.38.0 — 2026-10-17 — artifact published; activation pending verification
+
+- Material otomatis dari master mold; resep dan cara ukur tidak diminta ulang.
+- Pembacaan aktual tetap menyimpan desimal, nol dan N/A. Mode tanpa pembacaan tidak menambah halaman PDF kosong.
+- Unit/lint, trial emulator 5 + 1 + 3, signed upgrade dan startup lulus.
+- SHA-256 `6b160364f69c5ba2cc43e5e4e4a58c3fe784d475df8618536cad414f6b16710d`; API 2026.38, wire form 2026.08.5 dan Settings tetap kompatibel.
+
+
 ## 0.37.0 — 2026-10-16 — production activation verified
 
 - Add contextual Shift 1 production observations and an A4 portrait evidence appendix.
