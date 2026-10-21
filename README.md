@@ -1,21 +1,23 @@
-# mtc-apk-releases
+# Maintenance Operations releases
 
-## Latest artifact: 0.38.0
+## Desktop 1.21.0 / APK 0.39.0 — 21 Oktober 2026
 
-- [APK 0.38.0](releases/v0.38.0/app-release.apk), version code 73.
-- SHA-256: `6b160364f69c5ba2cc43e5e4e4a58c3fe784d475df8618536cad414f6b16710d`; 14,460,993 bytes.
-- Material berasal dari master mold. Kode resep dan pilihan cara ukur dihapus dari input.
-- Cycle Time, Injection Time dan Cushion tetap pembacaan aktual; tidak diberi target buatan.
-- PDF pengamatan hanya muncul bila ada pembacaan. Empat template checksheet lama tetap; lampiran baru A4 portrait.
-- Lulus 107 unit/lint, trial 5 UI/PDF + 1 layar 320 dp + 3 kontrak JSON, upgrade release 0.37 ke 0.38 dan startup delapan detik di MTC_API35. Bukan verifikasi HP fisik.
+- [Rilis lengkap, installer perangkat baru dan paket update EXE](https://github.com/iathaariq10/mtc-apk-releases/releases/tag/operations-v1.21.0-apk0.39.0).
+- [APK 0.39.0](https://github.com/iathaariq10/mtc-apk-releases/releases/download/operations-v1.21.0-apk0.39.0/app-release.apk), version code 74; 14.461.077 byte.
+- SHA-256 `07ec0c25112ce58499408581a44f172b7f5dd84f43ee5ca96c9d7e047c1fd274`.
+- Hanya checksheet Shift 1 perlu verifikasi admin. DT dan monitoring Shift 2/3 diterima sistem; Admin Gudang tetap memeriksa pemakaian fisik.
+- Update EXE melalui Velopack di aplikasi dengan backup SQLite; APK mengunduh dan memverifikasi paket di aplikasi lalu meminta konfirmasi Android.
+- APK 0.38.0 memerlukan satu pemasangan awal untuk mendapatkan updater baru. Update selanjutnya memakai halaman pembaruan di APK baru.
 
-OTA 0.38.0/API 2026.38 aktif dan terverifikasi pada 17 Oktober 2026 setelah Desktop 1.19.0 terpasang. Hash APK publik cocok; Settings dan wire form 2026.08.5 tetap identik. Transaksi menambah satu release dan satu audit tanpa mengubah data bisnis, membuat login aplikasi, atau mengirim push baru.
+EXE 1.21.0 terpasang; API/manifest 2026.39 aktif, hash publik sesuai. Settings dan form 2026.08.5 tidak berubah. Enam job CI, staging, upgrade EXE/data serta emulator MTC_API35 upgrade/retensi dan 24 skenario UI lulus. Bukan verifikasi HP fisik.
 
 ## Operasional
 
-Deployment konfigurasi provider memakai audit `ota.release.config_deploy`, backup,
-uji transaksi dan rollback. Tidak membuat login aplikasi atau push baru. Publisher
-mengenali audit tersebut agar tidak melakukan aktivasi/notifikasi ganda.
+Aktivasi konfigurasi memakai OAuth provider resmi, backup/recovery dan audit
+`ota.release.config_deploy`; tidak membuat login aplikasi atau push massal baru.
+Form publisher mengenali audit tersebut dan menolak publikasi/notifikasi ganda.
+Installer digunakan untuk perangkat baru/pemulihan. APK/paket rilis terbaru berada
+di GitHub Releases agar binary tidak digandakan di history Git.
 
-[APK 0.37.0](releases/v0.37.0/app-release.apk) disimpan untuk rollback.
+[APK 0.38.0](releases/v0.38.0/app-release.apk) tetap disimpan untuk rollback.
 Source, kredensial, database dan data operasional tidak disimpan di repository ini.

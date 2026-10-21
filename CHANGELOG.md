@@ -1,5 +1,13 @@
 # Changelog
 
+## Desktop 1.21.0 / APK 0.39.0 — 2026-10-21 — production activation verified
+
+- Only Shift 1 requires admin review; DT and Shift 2/3 monitoring are server accepted. Warehouse physical posting stays separate.
+- In-app APK download/package verification/Android consent and native Velopack update with online SQLite backup.
+- Six source CI jobs, staging, emulator upgrade/retention, 24 responsive scenarios and signed native upgrade passed. Public APK hash, manifest and live provider flag match; Settings/form unchanged.
+- Assets published in combined GitHub Release. Provider configuration activation creates an audit without app login or push broadcast.
+
+
 ## 0.38.0 — 2026-10-17 — production activation verified
 
 - Manifest/hash aktif terverifikasi; Settings dan form tetap identik. Uji publisher 9 skenario lulus; deployment provider tanpa login aplikasi/push baru.
