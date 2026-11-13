@@ -1,23 +1,22 @@
 # Maintenance Operations releases
 
-## Desktop 1.21.0 / APK 0.39.0 — 21 Oktober 2026
+EXE **1.35.0** / APK **0.47.0 (83)** - 13 November 2026.
 
-- [Rilis lengkap, installer perangkat baru dan paket update EXE](https://github.com/iathaariq10/mtc-apk-releases/releases/tag/operations-v1.21.0-apk0.39.0).
-- [APK 0.39.0](https://github.com/iathaariq10/mtc-apk-releases/releases/download/operations-v1.21.0-apk0.39.0/app-release.apk), version code 74; 14.461.077 byte.
-- SHA-256 `07ec0c25112ce58499408581a44f172b7f5dd84f43ee5ca96c9d7e047c1fd274`.
-- Hanya checksheet Shift 1 perlu verifikasi admin. DT dan monitoring Shift 2/3 diterima sistem; Admin Gudang tetap memeriksa pemakaian fisik.
-- Update EXE melalui Velopack di aplikasi dengan backup SQLite; APK mengunduh dan memverifikasi paket di aplikasi lalu meminta konfirmasi Android.
-- APK 0.38.0 memerlukan satu pemasangan awal untuk mendapatkan updater baru. Update selanjutnya memakai halaman pembaruan di APK baru.
+- [Rilis dan installer EXE](https://github.com/iathaariq10/mtc-apk-releases/releases/tag/operations-v1.35.0-apk0.47.0).
+- [Unduh APK 0.47.0](https://github.com/iathaariq10/mtc-apk-releases/releases/download/operations-v1.35.0-apk0.47.0/app-release.apk).
+- Minimum APK: **0.47.0**; minimum Android: **8.0 (API 26)**. API server: **2026.43**.
+- SHA-256 APK: `3f6e2e28cf5eef9271d7188d08d0d9047652acc2d8d83ad4c13cd44862759ed1`.
 
-EXE 1.21.0 terpasang; API/manifest 2026.39 aktif, hash publik sesuai. Settings dan form 2026.08.5 tidak berubah. Enam job CI, staging, upgrade EXE/data serta emulator MTC_API35 upgrade/retensi dan 24 skenario UI lulus. Bukan verifikasi HP fisik.
+Anggota dapat mengajukan alat/sparepart yang belum terdaftar dari form shift.
+Admin Gudang melakukan ACC master berkode otomatis atau menghubungkan barang
+yang sudah ada. Stok mengikuti transaksi gudang. Data dan pengaturan lama tetap
+dipertahankan. EXE menyertakan guard kuota D1 dan panel limit khusus Superadmin.
 
-## Operasional
+Update rutin EXE melalui Velopack dengan backup SQLite. APK mengunduh dan memeriksa
+hash/identitas paket sebelum konfirmasi pemasangan Android. Installer EXE dipakai
+untuk pemasangan awal atau pemulihan. APK telah diuji melalui update paket ADB di
+emulator dengan draft dan antrean kirim berisi data; tidak menyatakan uji HP fisik.
 
-Aktivasi konfigurasi memakai OAuth provider resmi, backup/recovery dan audit
-`ota.release.config_deploy`; tidak membuat login aplikasi atau push massal baru.
-Form publisher mengenali audit tersebut dan menolak publikasi/notifikasi ganda.
-Installer digunakan untuk perangkat baru/pemulihan. APK/paket rilis terbaru berada
-di GitHub Releases agar binary tidak digandakan di history Git.
-
-[APK 0.38.0](releases/v0.38.0/app-release.apk) tetap disimpan untuk rollback.
-Source, kredensial, database dan data operasional tidak disimpan di repository ini.
+Repository ini hanya untuk artifact publik dan informasi rilis. Source private,
+kredensial, database dan catatan operasional tidak dimasukkan. Release terdahulu
+tetap tersedia untuk pemulihan. Berkas rilis berada di GitHub Releases.
